@@ -12,7 +12,7 @@ import MapKit
 struct mapView: UIViewRepresentable {
     
     // list of annotations
-    var annotations: [MKAnnotation]
+    @State var annotations: [MKAnnotation]
     // store here new pin coordinates taken from long tap location on map
     @Binding var newPinCoordinate: CLLocationCoordinate2D
     

@@ -31,14 +31,6 @@ struct MapDisplayView: View {
             
             mapView(annotations: locations, newPinCoordinate: $newPinCoordinate)
                 .edgesIgnoringSafeArea(.all)
-                /*
-                .gesture(
-            LongPressGesture(minimumDuration: 2)
-                .onEnded { _ in
-                    print("long press!")
-                    
-                })
-                */
                     VStack {
                 Spacer()
                 HStack {
@@ -71,9 +63,6 @@ struct MapDisplayView: View {
         }
     }
 }
-
-
-
 
 struct addLocationButton: View {
     var body: some View {
