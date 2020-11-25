@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EA5B0D9694DAC5B12855C3B /* Pods_DotrixGames.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5221EF99761458B15F953CE /* Pods_DotrixGames.framework */; };
 		B52D8D612569827B004F5ED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D8D602569827B004F5ED7 /* AppDelegate.swift */; };
 		B52D8D632569827B004F5ED7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D8D622569827B004F5ED7 /* SceneDelegate.swift */; };
 		B52D8D652569827B004F5ED7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D8D642569827B004F5ED7 /* ContentView.swift */; };
@@ -14,9 +15,14 @@
 		B52D8D6A2569827C004F5ED7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52D8D692569827C004F5ED7 /* Preview Assets.xcassets */; };
 		B52D8D6D2569827C004F5ED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52D8D6B2569827C004F5ED7 /* LaunchScreen.storyboard */; };
 		B5439733256B25D100413283 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5439732256B25D100413283 /* MapView.swift */; };
+		B7225A23256EED3E0093F5C6 /* ParseClientConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */; };
+		B7225A2B256EF19F0093F5C6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7225A2A256EF19F0093F5C6 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D1FA00DC095A6005FAC1F9B /* Pods-DotrixGames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotrixGames.release.xcconfig"; path = "Target Support Files/Pods-DotrixGames/Pods-DotrixGames.release.xcconfig"; sourceTree = "<group>"; };
+		84EA523E8E43E800E9EE1D70 /* Pods-DotrixGames.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotrixGames.debug.xcconfig"; path = "Target Support Files/Pods-DotrixGames/Pods-DotrixGames.debug.xcconfig"; sourceTree = "<group>"; };
+		A5221EF99761458B15F953CE /* Pods_DotrixGames.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotrixGames.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52D8D5D2569827B004F5ED7 /* DotrixGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DotrixGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52D8D602569827B004F5ED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B52D8D622569827B004F5ED7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +32,8 @@
 		B52D8D6C2569827C004F5ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B52D8D6E2569827C004F5ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5439732256B25D100413283 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseClientConfigurator.swift; sourceTree = "<group>"; };
+		B7225A2A256EF19F0093F5C6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EA5B0D9694DAC5B12855C3B /* Pods_DotrixGames.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		342E7222D9AC6BE3E53F4056 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84EA523E8E43E800E9EE1D70 /* Pods-DotrixGames.debug.xcconfig */,
+				7D1FA00DC095A6005FAC1F9B /* Pods-DotrixGames.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B52D8D542569827B004F5ED7 = {
 			isa = PBXGroup;
 			children = (
 				B52D8D5F2569827B004F5ED7 /* DotrixGames */,
 				B52D8D5E2569827B004F5ED7 /* Products */,
+				342E7222D9AC6BE3E53F4056 /* Pods */,
+				E194E2FA82EC40E821F3EE62 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +78,8 @@
 		B52D8D5F2569827B004F5ED7 /* DotrixGames */ = {
 			isa = PBXGroup;
 			children = (
+				B7225A25256EF15E0093F5C6 /* Login */,
+				B7225A1F256EECED0093F5C6 /* Networking */,
 				B52D8D602569827B004F5ED7 /* AppDelegate.swift */,
 				B52D8D622569827B004F5ED7 /* SceneDelegate.swift */,
 				B52D8D642569827B004F5ED7 /* ContentView.swift */,
@@ -78,6 +100,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B7225A1F256EECED0093F5C6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B7225A25256EF15E0093F5C6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B7225A2A256EF19F0093F5C6 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E194E2FA82EC40E821F3EE62 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5221EF99761458B15F953CE /* Pods_DotrixGames.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B52D8D712569827C004F5ED7 /* Build configuration list for PBXNativeTarget "DotrixGames" */;
 			buildPhases = (
+				0D32D474F1A35FADA1C37C00 /* [CP] Check Pods Manifest.lock */,
 				B52D8D592569827B004F5ED7 /* Sources */,
 				B52D8D5A2569827B004F5ED7 /* Frameworks */,
 				B52D8D5B2569827B004F5ED7 /* Resources */,
+				833E367637B8FCC80620D083 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,15 +192,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D32D474F1A35FADA1C37C00 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DotrixGames-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		833E367637B8FCC80620D083 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DotrixGames/Pods-DotrixGames-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DotrixGames/Pods-DotrixGames-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DotrixGames/Pods-DotrixGames-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B52D8D592569827B004F5ED7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7225A2B256EF19F0093F5C6 /* LoginView.swift in Sources */,
 				B52D8D612569827B004F5ED7 /* AppDelegate.swift in Sources */,
 				B5439733256B25D100413283 /* MapView.swift in Sources */,
 				B52D8D632569827B004F5ED7 /* SceneDelegate.swift in Sources */,
 				B52D8D652569827B004F5ED7 /* ContentView.swift in Sources */,
+				B7225A23256EED3E0093F5C6 /* ParseClientConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +378,7 @@
 		};
 		B52D8D722569827C004F5ED7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84EA523E8E43E800E9EE1D70 /* Pods-DotrixGames.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -305,6 +398,7 @@
 		};
 		B52D8D732569827C004F5ED7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D1FA00DC095A6005FAC1F9B /* Pods-DotrixGames.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
