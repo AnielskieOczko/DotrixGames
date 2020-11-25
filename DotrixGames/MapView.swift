@@ -33,12 +33,18 @@ struct mapView: UIViewRepresentable {
             if gestureRecognizer.state == .ended {
                 let selectedPoint = gestureRecognizer.location(in: gestureRecognizer.view)
                 let newCoordinates = (gestureRecognizer.view as? MKMapView)?.convert(selectedPoint, toCoordinateFrom: gestureRecognizer.view)
+                guard let _newCoordinates = newCoordinates else { return }
                 let newAnnotation = MKPointAnnotation()
-                newAnnotation.coordinate = newCoordinates!
-                //parent.annotations.append(newAnnotation)
-                parent.newPinCoordinate = newCoordinates!
-                print("longPress: \(newCoordinates!)")
+                newAnnotation.coordinate = _newCoordinates
+                parent.annotations.append(newAnnotation)
+                parent.newPinCoordinate = _newCoordinates
+                print("longPress: \(_newCoordinates)")
+                print(parent.annotations.count)
             }
+        }
+        
+        func addAnnotations(view: MKMapView) {
+            view.addAnnotations(parent.annotations)
         }
         // when this function uncommented adding annotations does not works
         /*
@@ -47,7 +53,8 @@ struct mapView: UIViewRepresentable {
             view.canShowCallout = true
             return view
         }
-        */
+         */
+        
     }
     
     func makeCoordinator() -> Coordinator {
@@ -66,12 +73,13 @@ struct mapView: UIViewRepresentable {
     }
     
     func updateUIView(_ view: MKMapView, context: Context) {
+        //view.delegate = context.coordinator
         // checks if annotation count in view is same line in model if not, remove all annotations and replace them by new annotations from model
         // this should be triggered everytime something changes in view
-        if annotations.count != view.annotations.count {
+        //if annotations.count != view.annotations.count {
             print(annotations.count)
-            view.removeAnnotations(view.annotations)
+            //view.removeAnnotations(view.annotations)
             view.addAnnotations(annotations)
-        }
+        //}
     }
 }

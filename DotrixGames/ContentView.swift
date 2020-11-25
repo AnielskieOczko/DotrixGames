@@ -11,6 +11,7 @@ import Combine
 import MapKit
 
 struct ContentView: View {
+    
     var body: some View {
         TabView {
             MapDisplayView()
@@ -27,8 +28,17 @@ struct MapDisplayView: View {
     
     var body: some View {
         ZStack {
+            
             mapView(annotations: locations, newPinCoordinate: $newPinCoordinate)
                 .edgesIgnoringSafeArea(.all)
+                /*
+                .gesture(
+            LongPressGesture(minimumDuration: 2)
+                .onEnded { _ in
+                    print("long press!")
+                    
+                })
+                */
                     VStack {
                 Spacer()
                 HStack {
@@ -61,6 +71,9 @@ struct MapDisplayView: View {
         }
     }
 }
+
+
+
 
 struct addLocationButton: View {
     var body: some View {
