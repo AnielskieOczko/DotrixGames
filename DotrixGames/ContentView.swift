@@ -13,15 +13,15 @@ import MapKit
 struct ContentView: View {
     var body: some View {
         TabView {
-            mapDisplayView()
-            //loginView()
+            MapDisplayView()
+            LoginView()
             //createEvent()
         }
         
     }
 }
 
-struct mapDisplayView: View {
+struct MapDisplayView: View {
     @State private var locations = [MKPointAnnotation]()
     @State private var newPinCoordinate = CLLocationCoordinate2D()
     
@@ -155,44 +155,44 @@ struct createEvent: View {
 
 
 
-class LoginData {
-    var userName = ""
-    var password = ""
-}
-
-struct loginButton: View {
-    var body: some View {
-        Text("LOGIN")
-            .font(.headline)
-            .foregroundColor(Color.white)
-            .padding()
-            .frame(width: 100, height: 50)
-            .background(Color.green)
-            .cornerRadius(5)
-        
-    }
-}
-
-struct loginView: View {
-    @State var userName = ""
-    @State var password = ""
-    
-    var body: some View {
-        VStack {
-            TextField("userName", text: $userName)
-            SecureField("password", text: $password)
-            
-            Button(action: { print("login button tapped") }) {
-                loginButton()
-            }
-        }
-
-    }
-}
-
-
-
-
+//class LoginData {
+//    var userName = ""
+//    var password = ""
+//}
+//
+//struct loginButton: View {
+//    var body: some View {
+//        Text("LOGIN")
+//            .font(.headline)
+//            .foregroundColor(Color.white)
+//            .padding()
+//            .frame(width: 100, height: 50)
+//            .background(Color.green)
+//            .cornerRadius(5)
+//
+//    }
+//}
+//
+//struct loginView: View {
+//    @State var userName = ""
+//    @State var password = ""
+//
+//    var body: some View {
+//        VStack {
+//            TextField("userName", text: $userName)
+//            SecureField("password", text: $password)
+//
+//            Button(action: { print("login button tapped") }) {
+//                loginButton()
+//            }
+//        }
+//
+//    }
+//}
+//
+//
+//
+//
 
 
 
