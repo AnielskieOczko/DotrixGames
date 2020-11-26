@@ -14,7 +14,8 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            MapDisplayView()
+            //signUpView()
+            //MapDisplayView()
             LoginView()
             //createEvent()
         }

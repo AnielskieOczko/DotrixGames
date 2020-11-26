@@ -31,7 +31,7 @@ struct LoginView: View {
                 TextField("userName", text: $userName)
                 SecureField("password", text: $password)
 
-                Button(action: { login(username: self.userName, password: self.password, email: "") }) {
+                Button(action: { login(userName: self.userName, password: self.password) }) {
                     loginButton()
                 }
                 NavigationLink(destination: LoginView()) {
@@ -45,27 +45,20 @@ struct LoginView: View {
                 }
             }
         }
-
     }
 }
 
 
-
-func login(username: String, password: String, email: String) {
-    let user = PFUser()
-  user.username = username
-  user.password = password
-  user.email = email
-  // other fields can be set just like with PFObject
-  user["phone"] = "415-392-0202"
-
-  user.signUpInBackground {
-    (succeeded: Bool, error: Error?) -> Void in
-    if let error = error {
-      let errorString = error.localizedDescription
-      // Show the errorString somewhere and let the user try again.
-    } else {
-      // Hooray! Let them use the app now.
+func login(userName: String, password: String) {
+    PFUser.logInWithUsername(inBackground:"myname", password:"mypass") {
+      (user: PFUser?, error: Error?) -> Void in
+      if user != nil {
+        // Do stuff after successful login.
+        print("logged in")
+      } else {
+        // The login failed. Check error to see why.
+        print(error.debugDescription)
+      }
     }
-  }
 }
+

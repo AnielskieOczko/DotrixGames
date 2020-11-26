@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1EA5B0D9694DAC5B12855C3B /* Pods_DotrixGames.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5221EF99761458B15F953CE /* Pods_DotrixGames.framework */; };
+		B52D054825705B4000526B23 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D054725705B4000526B23 /* RegistrationView.swift */; };
 		B52D8D612569827B004F5ED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D8D602569827B004F5ED7 /* AppDelegate.swift */; };
 		B52D8D632569827B004F5ED7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D8D622569827B004F5ED7 /* SceneDelegate.swift */; };
 		B52D8D652569827B004F5ED7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D8D642569827B004F5ED7 /* ContentView.swift */; };
@@ -23,6 +24,7 @@
 		7D1FA00DC095A6005FAC1F9B /* Pods-DotrixGames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotrixGames.release.xcconfig"; path = "Target Support Files/Pods-DotrixGames/Pods-DotrixGames.release.xcconfig"; sourceTree = "<group>"; };
 		84EA523E8E43E800E9EE1D70 /* Pods-DotrixGames.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotrixGames.debug.xcconfig"; path = "Target Support Files/Pods-DotrixGames/Pods-DotrixGames.debug.xcconfig"; sourceTree = "<group>"; };
 		A5221EF99761458B15F953CE /* Pods_DotrixGames.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotrixGames.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B52D054725705B4000526B23 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		B52D8D5D2569827B004F5ED7 /* DotrixGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DotrixGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52D8D602569827B004F5ED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B52D8D622569827B004F5ED7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				B7225A2A256EF19F0093F5C6 /* LoginView.swift */,
+				B52D054725705B4000526B23 /* RegistrationView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				B7225A2B256EF19F0093F5C6 /* LoginView.swift in Sources */,
 				B52D8D612569827B004F5ED7 /* AppDelegate.swift in Sources */,
 				B5439733256B25D100413283 /* MapView.swift in Sources */,
+				B52D054825705B4000526B23 /* RegistrationView.swift in Sources */,
 				B52D8D632569827B004F5ED7 /* SceneDelegate.swift in Sources */,
 				B52D8D652569827B004F5ED7 /* ContentView.swift in Sources */,
 				B7225A23256EED3E0093F5C6 /* ParseClientConfigurator.swift in Sources */,
