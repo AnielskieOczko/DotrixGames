@@ -1,3 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-DotrixGames/Pods-DotrixGames-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework
+${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework
+${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework
+${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework
+${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework
 ${BUILT_PRODUCTS_DIR}/Parse/Parse.framework

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,11 @@
 		B52D8D672569827C004F5ED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52D8D662569827C004F5ED7 /* Assets.xcassets */; };
 		B52D8D6A2569827C004F5ED7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52D8D692569827C004F5ED7 /* Preview Assets.xcassets */; };
 		B52D8D6D2569827C004F5ED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52D8D6B2569827C004F5ED7 /* LaunchScreen.storyboard */; };
-		B5439733256B25D100413283 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5439732256B25D100413283 /* MapView.swift */; };
+		B5389B792573D45400FA2404 /* CreateEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5389B782573D45400FA2404 /* CreateEventView.swift */; };
+		B5389B7D2573D70700FA2404 /* CreateEventModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5389B7C2573D70700FA2404 /* CreateEventModelView.swift */; };
+		B5389B7F2573D79F00FA2404 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5389B7E2573D79F00FA2404 /* MapView.swift */; };
+		B5389B812573DAAE00FA2404 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5389B802573DAAE00FA2404 /* LoginModel.swift */; };
+		B5439733256B25D100413283 /* MapModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5439732256B25D100413283 /* MapModelView.swift */; };
 		B7225A23256EED3E0093F5C6 /* ParseClientConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */; };
 		B7225A2B256EF19F0093F5C6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7225A2A256EF19F0093F5C6 /* LoginView.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +37,11 @@
 		B52D8D692569827C004F5ED7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B52D8D6C2569827C004F5ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B52D8D6E2569827C004F5ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B5439732256B25D100413283 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		B5389B782573D45400FA2404 /* CreateEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventView.swift; sourceTree = "<group>"; };
+		B5389B7C2573D70700FA2404 /* CreateEventModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateEventModelView.swift; path = /Users/rafal/Documents/Developer/DotrixGames/DotrixGames/ViewModel/CreateEventModelView.swift; sourceTree = "<absolute>"; };
+		B5389B7E2573D79F00FA2404 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		B5389B802573DAAE00FA2404 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		B5439732256B25D100413283 /* MapModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModelView.swift; sourceTree = "<group>"; };
 		B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseClientConfigurator.swift; sourceTree = "<group>"; };
 		B7225A2A256EF19F0093F5C6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,12 +88,13 @@
 		B52D8D5F2569827B004F5ED7 /* DotrixGames */ = {
 			isa = PBXGroup;
 			children = (
-				B7225A25256EF15E0093F5C6 /* Login */,
+				B5389B762573CA1800FA2404 /* ViewModel */,
+				B5389B752573CA0F00FA2404 /* Model */,
+				B5389B772573CA2500FA2404 /* View */,
 				B7225A1F256EECED0093F5C6 /* Networking */,
 				B52D8D602569827B004F5ED7 /* AppDelegate.swift */,
 				B52D8D622569827B004F5ED7 /* SceneDelegate.swift */,
 				B52D8D642569827B004F5ED7 /* ContentView.swift */,
-				B5439732256B25D100413283 /* MapView.swift */,
 				B52D8D662569827C004F5ED7 /* Assets.xcassets */,
 				B52D8D6B2569827C004F5ED7 /* LaunchScreen.storyboard */,
 				B52D8D6E2569827C004F5ED7 /* Info.plist */,
@@ -100,6 +109,33 @@
 				B52D8D692569827C004F5ED7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B5389B752573CA0F00FA2404 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B5389B802573DAAE00FA2404 /* LoginModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B5389B762573CA1800FA2404 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B5439732256B25D100413283 /* MapModelView.swift */,
+				B5389B7C2573D70700FA2404 /* CreateEventModelView.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B5389B772573CA2500FA2404 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B7225A25256EF15E0093F5C6 /* Login */,
+				B5389B782573D45400FA2404 /* CreateEventView.swift */,
+				B5389B7E2573D79F00FA2404 /* MapView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B7225A1F256EECED0093F5C6 /* Networking */ = {
@@ -145,6 +181,8 @@
 			dependencies = (
 			);
 			name = DotrixGames;
+			packageProductDependencies = (
+			);
 			productName = DotrixGames;
 			productReference = B52D8D5D2569827B004F5ED7 /* DotrixGames.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +211,9 @@
 				Base,
 			);
 			mainGroup = B52D8D542569827B004F5ED7;
+			packageReferences = (
+				B52E4B482573091C00106EA9 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			productRefGroup = B52D8D5E2569827B004F5ED7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -243,10 +284,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7225A2B256EF19F0093F5C6 /* LoginView.swift in Sources */,
+				B5389B792573D45400FA2404 /* CreateEventView.swift in Sources */,
+				B5389B7D2573D70700FA2404 /* CreateEventModelView.swift in Sources */,
+				B5389B812573DAAE00FA2404 /* LoginModel.swift in Sources */,
 				B52D8D612569827B004F5ED7 /* AppDelegate.swift in Sources */,
-				B5439733256B25D100413283 /* MapView.swift in Sources */,
+				B5439733256B25D100413283 /* MapModelView.swift in Sources */,
 				B52D054825705B4000526B23 /* RegistrationView.swift in Sources */,
 				B52D8D632569827B004F5ED7 /* SceneDelegate.swift in Sources */,
+				B5389B7F2573D79F00FA2404 /* MapView.swift in Sources */,
 				B52D8D652569827B004F5ED7 /* ContentView.swift in Sources */,
 				B7225A23256EED3E0093F5C6 /* ParseClientConfigurator.swift in Sources */,
 			);
@@ -442,6 +487,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B52E4B482573091C00106EA9 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = B52D8D552569827B004F5ED7 /* Project object */;
 }

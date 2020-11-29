@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import FBSDKCoreKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -29,5 +30,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.makeKeyAndVisible()
         }
     }
+     // Swift
+     //
+     // SceneDelegate.swift
+    // this required to ad if using iOS 13 or above
+     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+         guard let url = URLContexts.first?.url else {
+             return
+         }
+
+         ApplicationDelegate.shared.application(
+             UIApplication.shared,
+             open: url,
+             sourceApplication: nil,
+             annotation: [UIApplication.OpenURLOptionsKey.annotation]
+         )
+     }
 }
 

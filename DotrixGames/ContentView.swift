@@ -13,148 +13,21 @@ import MapKit
 struct ContentView: View {
     
     var body: some View {
-        TabView {
+        
+        LoginView()
+            .edgesIgnoringSafeArea(.all)
+            .statusBar(hidden: true)
+        //TabView {
             //signUpView()
             //MapDisplayView()
-            LoginView()
+            //LoginView()
+            
             //createEvent()
-        }
+        //}
         
     }
 }
 
-struct MapDisplayView: View {
-    @State private var locations = [MKPointAnnotation]()
-    @State private var newPinCoordinate = CLLocationCoordinate2D()
-    
-    var body: some View {
-        ZStack {
-            
-            mapView(annotations: locations, newPinCoordinate: $newPinCoordinate)
-                .edgesIgnoringSafeArea(.all)
-                    VStack {
-                Spacer()
-                HStack {
-                    Spacer()
-                    // button to add new annotation on map
-                    // this button will be replaced
-                    // long tap gesture will trigger adding new annotation to map
-                    Button(action: {
-                        let newLocation = MKPointAnnotation()
-                        // to add possibility to custom title, subtitle and others by user
-                        newLocation.title = "Miasto Dotrixa"
-                        newLocation.subtitle = "miasto"
-                        newLocation.coordinate = self.newPinCoordinate
-                        self.locations.append(newLocation)
-                    }) {
-                        Image(systemName: "plus")
-                        }
-                        .padding()
-                        .background(Color.black.opacity(0.75))
-                        .foregroundColor(Color.white)
-                        .font(Font.title)
-                        .clipShape(Circle())
-                        .padding(.trailing)
-                }
-            }
-        }
-        .tabItem {
-            Text("Map")
-            Image(systemName:"map.fill")
-        }
-    }
-}
-
-struct addLocationButton: View {
-    var body: some View {
-        VStack {
-            Spacer()
-            HStack {
-                Spacer()
-                Button(action: {
-                    
-                }) {
-                    Image(systemName: "plus")
-                    }
-                    .padding()
-                    .background(Color.black.opacity(0.75))
-                    .foregroundColor(Color.white)
-                    .font(Font.title)
-                    .clipShape(Circle())
-                    .padding(.trailing)
-            }
-        }
-    }
-}
-
-// describes event object
-class EventList: ObservableObject {
-    var didChange = PassthroughSubject<Void, Never>()
-    
-    var eventName = "" { didSet{ update() } }
-    static let eventTypes = ["casual","tournament"]
-    var type = 0 { didSet{ update() } }
-    
-    @Published var minPlayerNumber = 0 { didSet{ update() } }
-    @Published var maxPlayerNumber = 0 { didSet { update() } }
-    
-    var eventLocation = "" { didSet{ update() } }
-    var eventDescription = "" { didSet{ update() } }
-    
-    
-    func update() {
-        didChange.send(())
-    }
-}
-
-
-struct createEventView: View {
-    @ObservedObject var event = EventList()
-    
-    var body: some View {
-        NavigationView {
-            
-            Form {
-            // type event name
-            
-            // pick event type
-                Picker(selection: $event.type, label: Text("Chose event type")) {
-                    ForEach(0..<EventList.eventTypes.count) {
-                        Text(EventList.eventTypes[$0]).tag($0)
-                    }
-                }
-            // type min player number
-                Stepper(value: $event.minPlayerNumber, in: 0...20) {
-                    Text("Choose player minimum player number:  \(event.minPlayerNumber)")
-                }
-                
-            // type max player number
-                Stepper(value: $event.maxPlayerNumber, in: 0...20) {
-                    Text("Choose max player number: \(event.maxPlayerNumber)")
-                }
-            
-            // add event location
-            // here will be creared button to open map and give possibility to mark event location
-            // ? read adress based on annotation location, reverse option to add adress and based on adress add annotation
-            
-            // add event description
-            // field so small... to change somehowe field size to be multiline and larger
-                TextField("Add description",text: $event.eventDescription)
-            }
-            .navigationBarTitle("Add new event")
-        }
-    }
-}
-
-struct createEvent: View {
-    var body: some View {
-        createEventView()
-        .tabItem {
-            Text("createView")
-            Image(systemName: "tv.fill")
-        }
-    }
-}
 
 
 
@@ -197,7 +70,43 @@ struct createEvent: View {
 //
 //
 
+/*
+// code from Facebook (where to paste^^)
+// Swift
+//
+// Add this to the header of your file, e.g. in ViewController.swift
+import FBSDKLoginKit
+// Add this to the body
+class ViewController: UIViewController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        let loginButton = FBLoginButton()
+        loginButton.center = view.center
+        view.addSubview(loginButton)
+
+        // Swift
+
+        override func viewDidLoad() {
+            super.viewDidLoad()
+
+            if let token = AccessToken.current,
+                !token.isExpired {
+                // User is logged in, do work such as go to next view controller.
+            }
+        }
+            }
+}
+ 
+
+ // Swift
+ //
+ // Extend the code sample from 6a. Add Facebook Login to Your Code
+ // Add to your viewDidLoad method:
+ loginButton.permissions = ["public_profile", "email"]
+
+*/
 
 
 
