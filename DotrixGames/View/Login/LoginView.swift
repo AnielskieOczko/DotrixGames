@@ -12,8 +12,9 @@ struct LoginView: View {
     @State var rePass = ""
     
     var body: some View {
+        
         ZStack {
-            
+                
                 ZStack {
                     ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
                         Color("Color")
@@ -92,8 +93,20 @@ struct LoginView: View {
                                         .clipShape(Capsule())
                                 }
                                 Spacer()
+                                
+                                
+                                //loginViewController()
+                                //.padding(.vertical)
+                                //.padding(.horizontal, 450)
+                                        //.offset(x: -140, y: -100)
+                                        //.disabled(signUp ? true: false)
+                            
                             }
                             .padding(.top)
+
+
+
+                            
                         }
                         Spacer(minLength: 0)
                     }
@@ -213,28 +226,7 @@ struct ContentView: View {
 }
 */
 
-class UserLoginManager: ObservableObject {
-    let loginManager = LoginManager()
-    func facebookLogin() {
-        
-        loginManager.logIn(permissions: ["public_profile", "email"], from: nil) {(result, err) in
-            switch result {
-            case .failed(let err):
-                print(err)
-            case .cancelled:
-                print("User cancelled login.")
-            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
-                print("Logged in! \(grantedPermissions) \(declinedPermissions) \(accessToken)")
-                GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name"]).start(completionHandler: { (connection, result, error) -> Void in
-                    if (err == nil){
-                        let fbDetails = result as! NSDictionary
-                        print(fbDetails)
-                    }
-                })
-            }
-        }
-    }
-}
+
 
 
 /*

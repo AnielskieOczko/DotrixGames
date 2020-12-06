@@ -20,6 +20,7 @@
 		B5389B7F2573D79F00FA2404 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5389B7E2573D79F00FA2404 /* MapView.swift */; };
 		B5389B812573DAAE00FA2404 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5389B802573DAAE00FA2404 /* LoginModel.swift */; };
 		B5439733256B25D100413283 /* MapModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5439732256B25D100413283 /* MapModelView.swift */; };
+		B552DD71257856BF00374A5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552DD70257856BF00374A5D /* LoginViewController.swift */; };
 		B7225A23256EED3E0093F5C6 /* ParseClientConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */; };
 		B7225A2B256EF19F0093F5C6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7225A2A256EF19F0093F5C6 /* LoginView.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		B5389B7E2573D79F00FA2404 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B5389B802573DAAE00FA2404 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		B5439732256B25D100413283 /* MapModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModelView.swift; sourceTree = "<group>"; };
+		B552DD70257856BF00374A5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseClientConfigurator.swift; sourceTree = "<group>"; };
 		B7225A2A256EF19F0093F5C6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +126,7 @@
 			children = (
 				B5439732256B25D100413283 /* MapModelView.swift */,
 				B5389B7C2573D70700FA2404 /* CreateEventModelView.swift */,
+				B552DD70257856BF00374A5D /* LoginViewController.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				B5389B812573DAAE00FA2404 /* LoginModel.swift in Sources */,
 				B52D8D612569827B004F5ED7 /* AppDelegate.swift in Sources */,
 				B5439733256B25D100413283 /* MapModelView.swift in Sources */,
+				B552DD71257856BF00374A5D /* LoginViewController.swift in Sources */,
 				B52D054825705B4000526B23 /* RegistrationView.swift in Sources */,
 				B52D8D632569827B004F5ED7 /* SceneDelegate.swift in Sources */,
 				B5389B7F2573D79F00FA2404 /* MapView.swift in Sources */,
