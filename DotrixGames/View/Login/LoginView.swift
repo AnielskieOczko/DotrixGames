@@ -103,10 +103,6 @@ struct LoginView: View {
                             
                             }
                             .padding(.top)
-
-
-
-                            
                         }
                         Spacer(minLength: 0)
                     }
