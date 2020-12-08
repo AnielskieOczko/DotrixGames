@@ -95,7 +95,7 @@ struct LoginView: View {
                                 Spacer()
                                 
                                 
-                                //loginViewController()
+                                loginViewController()
                                 //.padding(.vertical)
                                 //.padding(.horizontal, 450)
                                         //.offset(x: -140, y: -100)
