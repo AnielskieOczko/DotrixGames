@@ -10,11 +10,11 @@ struct LoginView: View {
     @State var user = ""
     @State var pass = ""
     @State var rePass = ""
-    
+    @EnvironmentObject var loginManager: AuthorizaionManager
+
     var body: some View {
         
         ZStack {
-                
                 ZStack {
                     ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
                         Color("Color")
@@ -68,12 +68,10 @@ struct LoginView: View {
                                 .background(Color.white.opacity(0.5))
                         }
                         
-                        Text("Password")
-                            .foregroundColor(Color.white)
-                            .padding(.top, 10)
-                        
                         VStack {
                             SecureField("Password", text: $pass)
+
+                            Text("Twój zalogowany user to: \(loginManager.currentUser?.login ?? "niezalogowany")")
                             
                             Divider()
                                 .background(Color.white.opacity(0.5))
@@ -82,7 +80,7 @@ struct LoginView: View {
                                 Spacer()
                                 //Login button
                                 Button(action: {
-                                    login(userName: self.user, password: self.pass)
+                                    loginManager.login(with: self.user, password: self.pass)
                                 }) {
                                     Text("Login")
                                         .fontWeight(.bold)
@@ -93,16 +91,15 @@ struct LoginView: View {
                                         .clipShape(Capsule())
                                 }
                                 Spacer()
-                                
-                                
-                                loginViewController()
-                                //.padding(.vertical)
-                                //.padding(.horizontal, 450)
-                                        //.offset(x: -140, y: -100)
-                                        //.disabled(signUp ? true: false)
                             
                             }
                             .padding(.top)
+
+                            Button(action: {
+                                loginManager.facebookLogin()
+                            }) {
+                                Text("Continue with Facebook")
+                            }
                         }
                         Spacer(minLength: 0)
                     }
@@ -196,77 +193,3 @@ struct CShape: Shape {
         }
     }
 }
-
-func login(userName: String, password: String) {
-    PFUser.logInWithUsername(inBackground:"myname", password:"mypass") {
-      (user: PFUser?, error: Error?) -> Void in
-      if user != nil {
-        // Do stuff after successful login.
-        print("logged in")
-      } else {
-        // The login failed. Check error to see why.
-        print(error.debugDescription)
-      }
-    }
-}
-/*
-struct ContentView: View {
-    @ObservedObject var fbmanager = UserLoginManager()
-    var body: some View {
-        Button(action: {
-            self.fbmanager.facebookLogin()
-        }) {
-            Text("Continue with Facebook")
-        }
-    }
-}
-*/
-
-
-
-
-/*
- private struct loginButton: View {
-     var body: some View {
-         Text("LOGIN")
-             .font(.headline)
-             .foregroundColor(Color.white)
-             .padding()
-             .frame(width: 100, height: 50)
-             .background(Color.green)
-             .cornerRadius(5)
-     }
- }
- 
- 
- 
-struct LoginView: View {
-    @State var userName = ""
-    @State var password = ""
-
-    var body: some View {
-        NavigationView {
-            VStack {
-                TextField("userName", text: $userName)
-                SecureField("password", text: $password)
-
-                Button(action: { login(userName: self.userName, password: self.password) }) {
-                    loginButton()
-                }
-                NavigationLink(destination: LoginView()) {
-                    Text("Register")
-                        .font(.headline)
-                        .foregroundColor(Color.white)
-                        .padding()
-                        .frame(width: 100, height: 50)
-                        .background(Color.green)
-                        .cornerRadius(5)
-                }
-            }
-        }
-    }
-}
-
-*/
-
-

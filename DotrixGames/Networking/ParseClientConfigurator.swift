@@ -11,6 +11,8 @@ import Parse
 
 final class ParseClientConfigurator {
     static func configureParse() {
+        PFUser.registerSubclass()
+
         let configuration = ParseClientConfiguration {
           $0.applicationId = "1qsBmcRltG0X3JgtQU9YLSMY9oGQcmCyQoAIsxBn"
           $0.clientKey = "8JoFiE77RdFjKO2eNezeKKXa2PMTccHV477Df3JJ"

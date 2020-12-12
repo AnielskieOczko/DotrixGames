@@ -16,13 +16,16 @@
 		B52D8D6A2569827C004F5ED7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52D8D692569827C004F5ED7 /* Preview Assets.xcassets */; };
 		B52D8D6D2569827C004F5ED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52D8D6B2569827C004F5ED7 /* LaunchScreen.storyboard */; };
 		B5389B792573D45400FA2404 /* CreateEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5389B782573D45400FA2404 /* CreateEventView.swift */; };
-		B5389B7D2573D70700FA2404 /* CreateEventModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5389B7C2573D70700FA2404 /* CreateEventModelView.swift */; };
 		B5389B7F2573D79F00FA2404 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5389B7E2573D79F00FA2404 /* MapView.swift */; };
 		B5389B812573DAAE00FA2404 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5389B802573DAAE00FA2404 /* LoginModel.swift */; };
 		B5439733256B25D100413283 /* MapModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5439732256B25D100413283 /* MapModelView.swift */; };
 		B552DD71257856BF00374A5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552DD70257856BF00374A5D /* LoginViewController.swift */; };
 		B7225A23256EED3E0093F5C6 /* ParseClientConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */; };
 		B7225A2B256EF19F0093F5C6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7225A2A256EF19F0093F5C6 /* LoginView.swift */; };
+		B7D154912584CA3F0070759B /* CreateEventModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D154902584CA3F0070759B /* CreateEventModelView.swift */; };
+		B7D1549E2584CD3A0070759B /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = B7D1549D2584CD3A0070759B /* ElegantCalendar */; };
+		B7D154A52584CD620070759B /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D154A42584CD620070759B /* CalendarView.swift */; };
+		B7D154AC2584CFD30070759B /* AuthorizaionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D154AB2584CFD30070759B /* AuthorizaionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,13 +42,15 @@
 		B52D8D6C2569827C004F5ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B52D8D6E2569827C004F5ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5389B782573D45400FA2404 /* CreateEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventView.swift; sourceTree = "<group>"; };
-		B5389B7C2573D70700FA2404 /* CreateEventModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateEventModelView.swift; path = /Users/rafal/Documents/Developer/DotrixGames/DotrixGames/ViewModel/CreateEventModelView.swift; sourceTree = "<absolute>"; };
 		B5389B7E2573D79F00FA2404 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B5389B802573DAAE00FA2404 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		B5439732256B25D100413283 /* MapModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModelView.swift; sourceTree = "<group>"; };
 		B552DD70257856BF00374A5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseClientConfigurator.swift; sourceTree = "<group>"; };
 		B7225A2A256EF19F0093F5C6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B7D154902584CA3F0070759B /* CreateEventModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventModelView.swift; sourceTree = "<group>"; };
+		B7D154A42584CD620070759B /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		B7D154AB2584CFD30070759B /* AuthorizaionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizaionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EA5B0D9694DAC5B12855C3B /* Pods_DotrixGames.framework in Frameworks */,
+				B7D1549E2584CD3A0070759B /* ElegantCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +96,7 @@
 		B52D8D5F2569827B004F5ED7 /* DotrixGames */ = {
 			isa = PBXGroup;
 			children = (
+				B7D154A02584CD4A0070759B /* Calendar */,
 				B5389B762573CA1800FA2404 /* ViewModel */,
 				B5389B752573CA0F00FA2404 /* Model */,
 				B5389B772573CA2500FA2404 /* View */,
@@ -124,8 +131,8 @@
 		B5389B762573CA1800FA2404 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B7D154902584CA3F0070759B /* CreateEventModelView.swift */,
 				B5439732256B25D100413283 /* MapModelView.swift */,
-				B5389B7C2573D70700FA2404 /* CreateEventModelView.swift */,
 				B552DD70257856BF00374A5D /* LoginViewController.swift */,
 			);
 			path = ViewModel;
@@ -154,8 +161,17 @@
 			children = (
 				B7225A2A256EF19F0093F5C6 /* LoginView.swift */,
 				B52D054725705B4000526B23 /* RegistrationView.swift */,
+				B7D154AB2584CFD30070759B /* AuthorizaionManager.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		B7D154A02584CD4A0070759B /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				B7D154A42584CD620070759B /* CalendarView.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		E194E2FA82EC40E821F3EE62 /* Frameworks */ = {
@@ -185,6 +201,7 @@
 			);
 			name = DotrixGames;
 			packageProductDependencies = (
+				B7D1549D2584CD3A0070759B /* ElegantCalendar */,
 			);
 			productName = DotrixGames;
 			productReference = B52D8D5D2569827B004F5ED7 /* DotrixGames.app */;
@@ -216,6 +233,7 @@
 			mainGroup = B52D8D542569827B004F5ED7;
 			packageReferences = (
 				B52E4B482573091C00106EA9 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				B7D1549C2584CD3A0070759B /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
 			);
 			productRefGroup = B52D8D5E2569827B004F5ED7 /* Products */;
 			projectDirPath = "";
@@ -288,16 +306,18 @@
 			files = (
 				B7225A2B256EF19F0093F5C6 /* LoginView.swift in Sources */,
 				B5389B792573D45400FA2404 /* CreateEventView.swift in Sources */,
-				B5389B7D2573D70700FA2404 /* CreateEventModelView.swift in Sources */,
 				B5389B812573DAAE00FA2404 /* LoginModel.swift in Sources */,
 				B52D8D612569827B004F5ED7 /* AppDelegate.swift in Sources */,
 				B5439733256B25D100413283 /* MapModelView.swift in Sources */,
 				B552DD71257856BF00374A5D /* LoginViewController.swift in Sources */,
+				B7D154A52584CD620070759B /* CalendarView.swift in Sources */,
 				B52D054825705B4000526B23 /* RegistrationView.swift in Sources */,
 				B52D8D632569827B004F5ED7 /* SceneDelegate.swift in Sources */,
+				B7D154AC2584CFD30070759B /* AuthorizaionManager.swift in Sources */,
 				B5389B7F2573D79F00FA2404 /* MapView.swift in Sources */,
 				B52D8D652569827B004F5ED7 /* ContentView.swift in Sources */,
 				B7225A23256EED3E0093F5C6 /* ParseClientConfigurator.swift in Sources */,
+				B7D154912584CA3F0070759B /* CreateEventModelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +521,23 @@
 				minimumVersion = 8.2.0;
 			};
 		};
+		B7D1549C2584CD3A0070759B /* XCRemoteSwiftPackageReference "ElegantCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ThasianX/ElegantCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B7D1549D2584CD3A0070759B /* ElegantCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7D1549C2584CD3A0070759B /* XCRemoteSwiftPackageReference "ElegantCalendar" */;
+			productName = ElegantCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B52D8D552569827B004F5ED7 /* Project object */;
 }

@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-          
+        ParseClientConfigurator.configureParse()
         ApplicationDelegate.shared.application(
             application,
             didFinishLaunchingWithOptions: launchOptions
