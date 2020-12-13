@@ -74,6 +74,7 @@ struct registrationForm: View {
 // sign up function
 // uses registrationData class
 func signUp(regForm: registrationData) {
+
     let user = PFUser()
     
     user.username = regForm.userName

@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/rafal/Documents/Developer/DotrixGames/DotrixGames/ViewModel/CreateEventModelView.swift">
-   </FileRef>
-   <FileRef
       location = "group:DotrixGames.xcodeproj">
    </FileRef>
    <FileRef
