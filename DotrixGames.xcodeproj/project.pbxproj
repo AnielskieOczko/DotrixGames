@@ -20,6 +20,7 @@
 		B5389B812573DAAE00FA2404 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5389B802573DAAE00FA2404 /* LoginModel.swift */; };
 		B5439733256B25D100413283 /* MapModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5439732256B25D100413283 /* MapModelView.swift */; };
 		B552DD71257856BF00374A5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552DD70257856BF00374A5D /* LoginViewController.swift */; };
+		B5FAE5CA258FFC1900AFDADE /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FAE5C9258FFC1900AFDADE /* SignUp.swift */; };
 		B7225A23256EED3E0093F5C6 /* ParseClientConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */; };
 		B7225A2B256EF19F0093F5C6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7225A2A256EF19F0093F5C6 /* LoginView.swift */; };
 		B7D154912584CA3F0070759B /* CreateEventModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D154902584CA3F0070759B /* CreateEventModelView.swift */; };
@@ -46,6 +47,7 @@
 		B5389B802573DAAE00FA2404 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		B5439732256B25D100413283 /* MapModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModelView.swift; sourceTree = "<group>"; };
 		B552DD70257856BF00374A5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B5FAE5C9258FFC1900AFDADE /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseClientConfigurator.swift; sourceTree = "<group>"; };
 		B7225A2A256EF19F0093F5C6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B7D154902584CA3F0070759B /* CreateEventModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventModelView.swift; sourceTree = "<group>"; };
@@ -133,7 +135,7 @@
 			children = (
 				B7D154902584CA3F0070759B /* CreateEventModelView.swift */,
 				B5439732256B25D100413283 /* MapModelView.swift */,
-				B552DD70257856BF00374A5D /* LoginViewController.swift */,
+				B5CD79CB2597B0220010C19E /* Login */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -146,6 +148,16 @@
 				B5389B7E2573D79F00FA2404 /* MapView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B5CD79CB2597B0220010C19E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B552DD70257856BF00374A5D /* LoginViewController.swift */,
+				B7D154AB2584CFD30070759B /* AuthorizaionManager.swift */,
+				B5FAE5C9258FFC1900AFDADE /* SignUp.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		B7225A1F256EECED0093F5C6 /* Networking */ = {
@@ -161,7 +173,6 @@
 			children = (
 				B7225A2A256EF19F0093F5C6 /* LoginView.swift */,
 				B52D054725705B4000526B23 /* RegistrationView.swift */,
-				B7D154AB2584CFD30070759B /* AuthorizaionManager.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -232,7 +243,6 @@
 			);
 			mainGroup = B52D8D542569827B004F5ED7;
 			packageReferences = (
-				B52E4B482573091C00106EA9 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				B7D1549C2584CD3A0070759B /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
 			);
 			productRefGroup = B52D8D5E2569827B004F5ED7 /* Products */;
@@ -306,6 +316,7 @@
 			files = (
 				B7225A2B256EF19F0093F5C6 /* LoginView.swift in Sources */,
 				B5389B792573D45400FA2404 /* CreateEventView.swift in Sources */,
+				B5FAE5CA258FFC1900AFDADE /* SignUp.swift in Sources */,
 				B5389B812573DAAE00FA2404 /* LoginModel.swift in Sources */,
 				B52D8D612569827B004F5ED7 /* AppDelegate.swift in Sources */,
 				B5439733256B25D100413283 /* MapModelView.swift in Sources */,
@@ -513,14 +524,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B52E4B482573091C00106EA9 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.2.0;
-			};
-		};
 		B7D1549C2584CD3A0070759B /* XCRemoteSwiftPackageReference "ElegantCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ThasianX/ElegantCalendar";

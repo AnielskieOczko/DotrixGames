@@ -5,6 +5,6 @@ target 'DotrixGames' do
   use_frameworks!
 
 pod 'Parse'
-pod 'FacebookLogin'
+pod 'Parse/FacebookUtils'
 
 end

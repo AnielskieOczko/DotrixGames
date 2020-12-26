@@ -6,10 +6,13 @@
 //  Copyright © 2020 RafalDX. All rights reserved.
 //
 
-import Foundation
+import Parse
 
 struct LoginData {
     var userName: String = ""
     var password: String = ""
     var emailAdress: String = ""
 }
+
+
+

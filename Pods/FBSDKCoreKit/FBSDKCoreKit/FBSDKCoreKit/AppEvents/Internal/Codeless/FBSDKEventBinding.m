@@ -77,7 +77,7 @@
                                            pathType:component.pathType
                                          sourceView:sourceView];
     }
-    if (text) {
+    if (text.length > 0) {
       if ([component.name isEqualToString:PARAMETER_NAME_PRICE]) {
         NSNumber *value = [FBSDKAppEventsUtility getNumberValue:text];
         params[component.name] = value;
@@ -257,6 +257,42 @@ pathComponent:(FBSDKCodelessPathComponent *)component
   }
 
   return nil;
+}
+
+- (BOOL)isEqualToBinding:(FBSDKEventBinding *)binding
+{
+  if (_path.count != binding.path.count ||
+      _parameters.count != binding.parameters.count) {
+    return NO;
+  }
+
+  NSString *current = [NSString stringWithFormat:@"%@|%@|%@|%@",
+                       _eventName ?: @"",
+                       _eventType ?: @"",
+                       _appVersion ?: @"",
+                       _pathType ?: @""];
+  NSString *compared = [NSString stringWithFormat:@"%@|%@|%@|%@",
+                        binding.eventName ?: @"",
+                        binding.eventType ?: @"",
+                        binding.appVersion ?: @"",
+                        binding.pathType ?: @""];
+  if (![current isEqualToString:compared]) {
+    return NO;
+  }
+
+  for (int i = 0; i < _path.count; i++) {
+    if (![_path[i] isEqualToPath:binding.path[i]]) {
+      return NO;
+    }
+  }
+
+  for (int i = 0; i < _parameters.count; i++) {
+    if (![_parameters[i] isEqualToParameter:binding.parameters[i]]) {
+      return NO;
+    }
+  }
+
+  return YES;
 }
 
 //  MARK: - find event parameters via relative path

@@ -13,22 +13,28 @@ import MapKit
 struct ContentView: View {
 
     @EnvironmentObject var loginManager: AuthorizaionManager
-
+    
     @ViewBuilder var body: some View {
-
+        
         if loginManager.isUserLoggedIn() {
+            
             TabView {
-                signUpView()
                 MapDisplayView()
-                LoginView()
-                registrationForm()
                 createEvent()
+                //signUpView()
+                //MapDisplayView()
+                //LoginView()
+                //registrationForm()
             }
-        } else {
-            LoginView()
-                .environmentObject(AuthorizaionManager.shared)
-                .edgesIgnoringSafeArea(.all)
-                .statusBar(hidden: true)
+            .edgesIgnoringSafeArea(.all)
+            .statusBar(hidden: true)
         }
+        else {
+            LoginView()
+                        .environmentObject(AuthorizaionManager.shared)
+                        .edgesIgnoringSafeArea(.all)
+                        .statusBar(hidden: true)
+        }
+
     }
 }

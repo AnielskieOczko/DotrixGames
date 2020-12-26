@@ -10,6 +10,10 @@ struct LoginView: View {
     @State var user = ""
     @State var pass = ""
     @State var rePass = ""
+    @State var loginUserName = ""
+    @State var loginPassword = ""
+    
+    @ObservedObject var UserRegistrationData = registrationData()
     @EnvironmentObject var loginManager: AuthorizaionManager
 
     var body: some View {
@@ -62,16 +66,16 @@ struct LoginView: View {
                             .padding(.top, 10)
                         
                         VStack {
-                            TextField("UserName", text: $user)
+                            TextField("UserName", text: $loginUserName)
                             
                             Divider()
                                 .background(Color.white.opacity(0.5))
                         }
                         
                         VStack {
-                            SecureField("Password", text: $pass)
+                            SecureField("Password", text: $loginPassword)
 
-                            Text("Twój zalogowany user to: \(loginManager.currentUser?.login ?? "niezalogowany")")
+                            //Text("Twój zalogowany user to: \(loginManager.currentUser?.login ?? "niezalogowany")")
                             
                             Divider()
                                 .background(Color.white.opacity(0.5))
@@ -80,7 +84,9 @@ struct LoginView: View {
                                 Spacer()
                                 //Login button
                                 Button(action: {
-                                    loginManager.login(with: self.user, password: self.pass)
+                                    // standard login using parse lib
+                                    //login(userName: self.loginUserName, password: self.loginPassword)
+                                    self.loginManager.login(with: self.loginUserName, password: self.loginPassword)
                                 }) {
                                     Text("Login")
                                         .fontWeight(.bold)
@@ -96,7 +102,7 @@ struct LoginView: View {
                             .padding(.top)
 
                             Button(action: {
-                                loginManager.facebookLogin()
+                                self.loginManager.FBLoginUsingParse()
                             }) {
                                 Text("Continue with Facebook")
                             }
@@ -118,12 +124,12 @@ struct LoginView: View {
                         .font(.system(size: 25, weight: .bold))
                         .foregroundColor(Color("Color"))
                     
-                    Text("UserName")
+                    Text("Email")
                         .foregroundColor(Color("Color"))
                         .padding(.top, 10)
                     
                     VStack {
-                        TextField("UserName", text: $user)
+                        TextField("Email", text: $UserRegistrationData.emailAdress)
                         
                         Divider()
                             .background(Color("Color").opacity(0.5))
@@ -134,7 +140,7 @@ struct LoginView: View {
                         .padding(.top, 10)
                     
                     VStack {
-                        SecureField("Password", text: $pass)
+                        SecureField("Password", text: $UserRegistrationData.password)
                         
                         Divider()
                             .background(Color("Color").opacity(0.5))
@@ -146,15 +152,16 @@ struct LoginView: View {
                     
                     // here you have to add separate txt field Binding
                     VStack {
-                        SecureField("Re-Enter", text: $pass)
+                        SecureField("Re-Enter", text: $UserRegistrationData.reEnteredPassword)
                         
                         Divider()
                             .background(Color("Color").opacity(0.5))
                     }
+                    
                     HStack {
                         Spacer()
                         //Sign Up button
-                        Button(action: {}) {
+                        Button(action: {signUpUsingParse(regForm: self.UserRegistrationData)}) {
                             Text("Sign Up")
                                 .fontWeight(.bold)
                                 .foregroundColor(Color.white)

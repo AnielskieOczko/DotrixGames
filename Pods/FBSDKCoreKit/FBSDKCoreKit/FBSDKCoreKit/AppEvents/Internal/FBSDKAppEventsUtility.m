@@ -40,7 +40,6 @@
 @implementation FBSDKAppEventsUtility
 
 + (NSMutableDictionary *)activityParametersDictionaryForEvent:(NSString *)eventCategory
-                                           implicitEventsOnly:(BOOL)implicitEventsOnly
                                     shouldAccessAdvertisingID:(BOOL)shouldAccessAdvertisingID {
   NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
   parameters[@"event"] = eventCategory;
@@ -50,7 +49,7 @@
   [FBSDKBasicUtility dictionary:parameters setObject:attributionID forKey:@"attribution"];
 #endif
 
-  if (!implicitEventsOnly && shouldAccessAdvertisingID) {
+  if (shouldAccessAdvertisingID) {
     NSString *advertiserID = [[self class] advertiserID];
     [FBSDKBasicUtility dictionary:parameters setObject:advertiserID forKey:@"advertiser_id"];
   }
@@ -70,6 +69,7 @@
   }
 
   parameters[@"application_tracking_enabled"] = @(!FBSDKSettings.limitEventAndDataUsage).stringValue;
+  parameters[@"advertiser_id_collection_enabled"] = @(FBSDKSettings.advertiserIDCollectionEnabled).stringValue;
 
   NSString *userID = [FBSDKAppEvents userID];
   if (userID) {

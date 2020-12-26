@@ -5,7 +5,7 @@
 //  Created by Rafal on 26/11/2020.
 //  Copyright © 2020 RafalDX. All rights reserved.
 //
-
+/*
 import SwiftUI
 import Combine
 import Parse
@@ -20,6 +20,7 @@ struct signUpView: View {
 }
 
 // class to store sign up data during sign up
+
 class registrationData: ObservableObject {
     var didChange = PassthroughSubject<Void, Never>()
     
@@ -73,6 +74,7 @@ struct registrationForm: View {
 
 // sign up function
 // uses registrationData class
+
 func signUp(regForm: registrationData) {
 
     let user = PFUser()
@@ -95,3 +97,4 @@ func signUp(regForm: registrationData) {
     }
   }
 }
+*/

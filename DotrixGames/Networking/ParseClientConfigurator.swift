@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 final class ParseClientConfigurator {
-    static func configureParse() {
+    static func configureParse(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         PFUser.registerSubclass()
 
         let configuration = ParseClientConfiguration {
@@ -19,6 +19,7 @@ final class ParseClientConfigurator {
           $0.server = "https://parseapi.back4app.com"
         }
         Parse.initialize(with: configuration)
+        PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
     }
 
     static func testConnection() {

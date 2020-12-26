@@ -70,9 +70,9 @@ void sum(float *val0, float *val1);
                     };
 }
 
-+ (void)loadRules
++ (void)loadRulesForKey:(NSString *)useCaseKey
 {
-  _rules = [FBSDKModelManager getRules];
+  _rules = [FBSDKModelManager getRulesForKey:useCaseKey];
 }
 
 + (NSString *)getTextFeature:(NSString *)text
@@ -83,7 +83,7 @@ void sum(float *val0, float *val1);
   return [[NSString stringWithFormat:@"%@ | %@, %@", appName, screenName, text] lowercaseString];
 }
 
-+ (float *)getDenseFeatures:(NSDictionary *)viewHierarchy
++ (nullable float *)getDenseFeatures:(NSDictionary *)viewHierarchy
 {
   if (!_rules) {
     return nil;
