@@ -17,8 +17,8 @@ struct ContentView: View {
     @ViewBuilder var body: some View {
         
         if loginManager.isUserLoggedIn() {
-            
             TabView {
+                MenuView()
                 MapDisplayView()
                 createEvent()
                 //signUpView()
@@ -26,15 +26,28 @@ struct ContentView: View {
                 //LoginView()
                 //registrationForm()
             }
-            .edgesIgnoringSafeArea(.all)
-            .statusBar(hidden: true)
+            //.edgesIgnoringSafeArea(.all)
+            //.statusBar(hidden: true)
         }
         else {
             LoginView()
-                        .environmentObject(AuthorizaionManager.shared)
-                        .edgesIgnoringSafeArea(.all)
-                        .statusBar(hidden: true)
+                    .environmentObject(AuthorizaionManager.shared)
+                    .edgesIgnoringSafeArea(.all)
+                    .statusBar(hidden: true)
         }
+    }
+}
 
+
+struct MenuView: View {
+    
+    var body: some View {
+        VStack {
+            DisplayEventList()
+        }
+        .tabItem {
+            Text("Menu")
+            Image(systemName: "book")
+        }
     }
 }

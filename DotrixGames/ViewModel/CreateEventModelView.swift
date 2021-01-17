@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-
+import MapKit
 // describes event object
 class EventList: ObservableObject {
     var didChange = PassthroughSubject<Void, Never>()
@@ -21,7 +21,7 @@ class EventList: ObservableObject {
     
     var eventLocation = "" { didSet{ update() } }
     var eventDescription = "" { didSet{ update() } }
-    
+    var eventCoordinates: CLLocationCoordinate2D?  = nil { didSet { update() } }
     
     func update() {
         didChange.send(())

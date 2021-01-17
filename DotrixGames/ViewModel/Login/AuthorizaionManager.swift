@@ -22,7 +22,9 @@ class AuthorizaionManager: ObservableObject {
     static let shared = AuthorizaionManager()
 
     @Published private(set) var currentUser: MyUser? = nil
-
+    @Published private(set) var allertState = false
+    @Published var allertMessage = ""
+    
     private init() {}
 
     func login(with login: String, password: String) {
@@ -41,6 +43,7 @@ class AuthorizaionManager: ObservableObject {
         (user: PFUser?, error: Error?) -> Void in
         guard let self = self, let user = user else {
             print(error.debugDescription)
+            
             return
         }
         self.currentUser = MyUser(pfUser: user)
@@ -71,6 +74,35 @@ class AuthorizaionManager: ObservableObject {
 
     func isUserLoggedIn() -> Bool {
         return currentUser != nil
+    }
+    
+    func signUpUsingParse(login: String, password: String, email: String) {
+        let user = PFUser()
+        user.username = login
+        user.password = password
+        user.email = email
+      // other fields can be set just like with PFObject
+      user["phone"] = "415-392-0202"
+
+      user.signUpInBackground {
+        (succeeded: Bool, error: Error?) -> Void in
+        if let error = error {
+          let errorString = error.localizedDescription
+          // Show the errorString somewhere and let the user try again.
+            print(errorString)
+            self.allertState = true
+            self.allertMessage = errorString
+        } else {
+          // Hooray! Let them use the app now.
+            print("sign up done for user: ")
+            self.currentUser = MyUser(pfUser: user)
+            
+        }
+      }
+    }
+    
+    func showAllert() -> Bool {
+        return self.allertState
     }
 }
 

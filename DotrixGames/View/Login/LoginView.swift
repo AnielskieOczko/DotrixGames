@@ -7,17 +7,17 @@ import FBSDKLoginKit
 struct LoginView: View {
     
     @State var signUp = false
-    @State var user = ""
-    @State var pass = ""
-    @State var rePass = ""
+    @State var signUpEmail = ""
+    @State var signUpPassword = ""
+    @State var signUpPasswordConfirmation = ""
     @State var loginUserName = ""
     @State var loginPassword = ""
+
     
-    @ObservedObject var UserRegistrationData = registrationData()
+    //@ObservedObject var UserRegistrationData = registrationData()
     @EnvironmentObject var loginManager: AuthorizaionManager
 
     var body: some View {
-        
         ZStack {
                 ZStack {
                     ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
@@ -129,7 +129,7 @@ struct LoginView: View {
                         .padding(.top, 10)
                     
                     VStack {
-                        TextField("Email", text: $UserRegistrationData.emailAdress)
+                        TextField("Email", text: $signUpEmail)
                         
                         Divider()
                             .background(Color("Color").opacity(0.5))
@@ -140,7 +140,7 @@ struct LoginView: View {
                         .padding(.top, 10)
                     
                     VStack {
-                        SecureField("Password", text: $UserRegistrationData.password)
+                        SecureField("Password", text: $signUpPassword)
                         
                         Divider()
                             .background(Color("Color").opacity(0.5))
@@ -152,7 +152,7 @@ struct LoginView: View {
                     
                     // here you have to add separate txt field Binding
                     VStack {
-                        SecureField("Re-Enter", text: $UserRegistrationData.reEnteredPassword)
+                        SecureField("Re-Enter", text: $signUpPasswordConfirmation)
                         
                         Divider()
                             .background(Color("Color").opacity(0.5))
@@ -161,7 +161,8 @@ struct LoginView: View {
                     HStack {
                         Spacer()
                         //Sign Up button
-                        Button(action: {signUpUsingParse(regForm: self.UserRegistrationData)}) {
+                        Button(action: {
+                            self.loginManager.signUpUsingParse(login: self.signUpEmail, password: self.signUpPassword, email: self.signUpEmail)}) {
                             Text("Sign Up")
                                 .fontWeight(.bold)
                                 .foregroundColor(Color.white)
@@ -179,11 +180,12 @@ struct LoginView: View {
                 .padding()
             }
             .background(Color.white.edgesIgnoringSafeArea(.all))
-            // change user interface style
+                // change user interface style
             .preferredColorScheme(signUp ? .light: .dark)
+        
         }
-    }
 
+    }
 
 struct CShape: Shape {
     func path(in rect: CGRect) -> Path {

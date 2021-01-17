@@ -13,7 +13,7 @@ import Parse
 
 
 
-
+//@EnvironmentObject var loginManager: AuthorizaionManager
 
 class User: ObservableObject {
     
@@ -42,9 +42,7 @@ class registrationData: ObservableObject {
 // sign up function
 // uses registrationData class
 func signUpUsingParse(regForm: registrationData) {
-
     let user = PFUser()
-    
     user.username = regForm.emailAdress
     user.password = regForm.password
     user.email = regForm.emailAdress
@@ -60,6 +58,7 @@ func signUpUsingParse(regForm: registrationData) {
     } else {
       // Hooray! Let them use the app now.
         print("sign up done for user: ")
+        
     }
   }
 }
