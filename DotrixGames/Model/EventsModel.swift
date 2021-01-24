@@ -64,6 +64,7 @@ struct EventsList {
               organizators: organizators)
     }
     
+    
     struct Event: Identifiable {
         var id: Int
         

@@ -9,21 +9,22 @@ import Foundation
 import Combine
 import MapKit
 // describes event object
-class EventList: ObservableObject {
+class Event: ObservableObject {
+
     var didChange = PassthroughSubject<Void, Never>()
     
-    var eventName = "" { didSet{ update() } }
-    static let eventTypes = ["casual","tournament"]
+    var name = "" { didSet{ update() } }
+    static let types = ["casual","tournament"]
     var type = 0 { didSet{ update() } }
-    
-    @Published var minPlayerNumber = 0 { didSet{ update() } }
-    @Published var maxPlayerNumber = 0 { didSet { update() } }
-    
-    var eventLocation = "" { didSet{ update() } }
-    var eventDescription = "" { didSet{ update() } }
-    var eventCoordinates: CLLocationCoordinate2D?  = nil { didSet { update() } }
+    var mapCoordinates: CLLocationCoordinate2D?  = nil { didSet { update() } }
+    @Published var numberOfPlayers = 0 { didSet{ update() } }
+    var description = "" { didSet{ update() } }
+    var gameName = "" { didSet{ update() } }
+    var organizators = "" { didSet{ update() } }
     
     func update() {
         didChange.send(())
     }
 }
+
+

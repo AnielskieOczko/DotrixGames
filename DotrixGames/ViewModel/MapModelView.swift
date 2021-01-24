@@ -38,8 +38,8 @@ struct mapView: UIViewRepresentable {
                 newAnnotation.coordinate = _newCoordinates
                 parent.annotations.append(newAnnotation)
                 parent.newPinCoordinate = _newCoordinates
-                print("longPress: \(_newCoordinates)")
-                print(parent.annotations.count)
+                //print("longPress: \(_newCoordinates)")
+                //print(parent.annotations.count)
             }
         }
         

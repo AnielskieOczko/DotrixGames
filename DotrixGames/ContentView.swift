@@ -13,14 +13,14 @@ import MapKit
 struct ContentView: View {
 
     @EnvironmentObject var loginManager: AuthorizaionManager
-    
+    @ObservedObject var modelView =  EventViewModel()
     @ViewBuilder var body: some View {
         
         if loginManager.isUserLoggedIn() {
             TabView {
-                MenuView()
+                MenuView(modelView: modelView)
                 MapDisplayView()
-                createEvent()
+                createEvent(viewModel: modelView)
                 //signUpView()
                 //MapDisplayView()
                 //LoginView()
@@ -40,10 +40,11 @@ struct ContentView: View {
 
 
 struct MenuView: View {
+    @State var modelView: EventViewModel
     
     var body: some View {
         VStack {
-            DisplayEventList()
+            DisplayEventList(viewModel: modelView)
         }
         .tabItem {
             Text("Menu")

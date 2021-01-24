@@ -67,8 +67,8 @@ class EventViewModel: ObservableObject {
                         desciption: String,
                         gameName: String,
                         organizators: String) -> EventsList.Event {
-        
-        model.createNewEvent(id: id, name: name, type: type, mapCoordinator: mapCoordinator, numberOfPlayers: numberOfPlayers, desciption: desciption, gameName: gameName, organizators: organizators)
+        print(events.count)
+        return model.createNewEvent(id: id, name: name, type: type, mapCoordinator: mapCoordinator, numberOfPlayers: numberOfPlayers, desciption: desciption, gameName: gameName, organizators: organizators)
     }
     
 }
