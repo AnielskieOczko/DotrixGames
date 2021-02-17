@@ -10,13 +10,13 @@ import Foundation
 import SwiftUI
 import MapKit
 
-class EventViewModel: ObservableObject {
+class EventListViewModel: ObservableObject {
 
-    @Published private var model: EventsList = EventViewModel.createEventList()
+    @Published private var model: EventsList = EventListViewModel.createEventList()
     
     static func createEventList() -> EventsList {
         
-        let testEvent1 = EventsList.Event(id: 1,
+        let testEvent1 = Event(id: 1,
                                           name: "test name1",
                                           type: "Casaul",
                                           mapCoordinates: CLLocationCoordinate2D(latitude: 0.00, longitude: 0.00),
@@ -24,7 +24,7 @@ class EventViewModel: ObservableObject {
                                           description: "test description1",
                                           gameName: "Szachy",
                                           organizators: "test organizer1")
-        let testEvent2 = EventsList.Event(id: 2,
+        let testEvent2 = Event(id: 2,
                                           name: "test name2",
                                           type: "Tournament",
                                           mapCoordinates: CLLocationCoordinate2D(latitude: 0.00, longitude: 0.00),
@@ -33,7 +33,7 @@ class EventViewModel: ObservableObject {
                                           gameName: "Szachy",
                                           organizators: "test organizer2")
         
-        var events = [EventsList.Event]()
+        var events = [Event]()
         events.append(testEvent1)
         events.append(testEvent2)
         
@@ -42,34 +42,34 @@ class EventViewModel: ObservableObject {
     }
     
     // MARK: Access to the model
-    var events: [EventsList.Event] {
+    var events: [Event] {
         model.getEventList()
     }
     
     // MARK: Intent(s)
-    func addNewEvent(event: EventsList.Event) {
+    func addNewEvent(event: Event) {
         model.addEvent(newEvent: event)
     }
     
-    func removeEvent(event: EventsList.Event) {
+    func removeEvent(event: Event) {
         model.removeEvent(event: event)
     }
     
-    func editEvent(event: EventsList.Event) {
+    func editEvent(event: Event) {
         model.editEvent()
     }
     
-    func createNewEvent(id: Int,
-                        name: String,
-                        type: String,
-                        mapCoordinator: CLLocationCoordinate2D,
-                        numberOfPlayers: Int,
-                        desciption: String,
-                        gameName: String,
-                        organizators: String) -> EventsList.Event {
-        print(events.count)
-        return model.createNewEvent(id: id, name: name, type: type, mapCoordinator: mapCoordinator, numberOfPlayers: numberOfPlayers, desciption: desciption, gameName: gameName, organizators: organizators)
-    }
+//    func createNewEvent(id: Int,
+//                        name: String,
+//                        type: String,
+//                        mapCoordinator: CLLocationCoordinate2D,
+//                        numberOfPlayers: Int,
+//                        desciption: String,
+//                        gameName: String,
+//                        organizators: String) -> Event {
+//        print(events.count)
+//        return model.createNewEvent(id: id, name: name, type: type, mapCoordinator: mapCoordinator, numberOfPlayers: numberOfPlayers, desciption: desciption, gameName: gameName, organizators: organizators)
+//    }
     
 }
 

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1EA5B0D9694DAC5B12855C3B /* Pods_DotrixGames.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5221EF99761458B15F953CE /* Pods_DotrixGames.framework */; };
+		B52C4A8A25DDB04900F19C0C /* EventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C4A8925DDB04900F19C0C /* EventObject.swift */; };
+		B52C4A8C25DDB47400F19C0C /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C4A8B25DDB47400F19C0C /* testView.swift */; };
+		B52C4A8E25DDB6C700F19C0C /* EventStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C4A8D25DDB6C700F19C0C /* EventStorage.swift */; };
 		B52D054825705B4000526B23 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D054725705B4000526B23 /* RegistrationView.swift */; };
 		B52D8D612569827B004F5ED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D8D602569827B004F5ED7 /* AppDelegate.swift */; };
 		B52D8D632569827B004F5ED7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D8D622569827B004F5ED7 /* SceneDelegate.swift */; };
@@ -15,10 +18,10 @@
 		B52D8D672569827C004F5ED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52D8D662569827C004F5ED7 /* Assets.xcassets */; };
 		B52D8D6A2569827C004F5ED7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52D8D692569827C004F5ED7 /* Preview Assets.xcassets */; };
 		B52D8D6D2569827C004F5ED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52D8D6B2569827C004F5ED7 /* LaunchScreen.storyboard */; };
-		B52E83D025B4415900CC8F44 /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E83CF25B4415900CC8F44 /* EventsModel.swift */; };
+		B52E83D025B4415900CC8F44 /* EventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E83CF25B4415900CC8F44 /* EventListModel.swift */; };
 		B52E83D225B4575F00CC8F44 /* NewEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E83D125B4575F00CC8F44 /* NewEventViewModel.swift */; };
-		B52E83D425B4667300CC8F44 /* DisplayEventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E83D325B4667300CC8F44 /* DisplayEventList.swift */; };
-		B5389B792573D45400FA2404 /* CreateEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5389B782573D45400FA2404 /* CreateEventView.swift */; };
+		B52E83D425B4667300CC8F44 /* ViewForShowingEventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E83D325B4667300CC8F44 /* ViewForShowingEventList.swift */; };
+		B5389B792573D45400FA2404 /* ViewForAddingNewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5389B782573D45400FA2404 /* ViewForAddingNewEvent.swift */; };
 		B5389B7F2573D79F00FA2404 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5389B7E2573D79F00FA2404 /* MapView.swift */; };
 		B5389B812573DAAE00FA2404 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5389B802573DAAE00FA2404 /* LoginModel.swift */; };
 		B5439733256B25D100413283 /* MapModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5439732256B25D100413283 /* MapModelView.swift */; };
@@ -26,7 +29,6 @@
 		B5FAE5CA258FFC1900AFDADE /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FAE5C9258FFC1900AFDADE /* SignUp.swift */; };
 		B7225A23256EED3E0093F5C6 /* ParseClientConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */; };
 		B7225A2B256EF19F0093F5C6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7225A2A256EF19F0093F5C6 /* LoginView.swift */; };
-		B7D154912584CA3F0070759B /* CreateEventModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D154902584CA3F0070759B /* CreateEventModelView.swift */; };
 		B7D1549E2584CD3A0070759B /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = B7D1549D2584CD3A0070759B /* ElegantCalendar */; };
 		B7D154A52584CD620070759B /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D154A42584CD620070759B /* CalendarView.swift */; };
 		B7D154AC2584CFD30070759B /* AuthorizaionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D154AB2584CFD30070759B /* AuthorizaionManager.swift */; };
@@ -36,6 +38,9 @@
 		7D1FA00DC095A6005FAC1F9B /* Pods-DotrixGames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotrixGames.release.xcconfig"; path = "Target Support Files/Pods-DotrixGames/Pods-DotrixGames.release.xcconfig"; sourceTree = "<group>"; };
 		84EA523E8E43E800E9EE1D70 /* Pods-DotrixGames.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotrixGames.debug.xcconfig"; path = "Target Support Files/Pods-DotrixGames/Pods-DotrixGames.debug.xcconfig"; sourceTree = "<group>"; };
 		A5221EF99761458B15F953CE /* Pods_DotrixGames.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotrixGames.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B52C4A8925DDB04900F19C0C /* EventObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventObject.swift; sourceTree = "<group>"; };
+		B52C4A8B25DDB47400F19C0C /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
+		B52C4A8D25DDB6C700F19C0C /* EventStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStorage.swift; sourceTree = "<group>"; };
 		B52D054725705B4000526B23 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		B52D8D5D2569827B004F5ED7 /* DotrixGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DotrixGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52D8D602569827B004F5ED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,10 +50,10 @@
 		B52D8D692569827C004F5ED7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B52D8D6C2569827C004F5ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B52D8D6E2569827C004F5ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B52E83CF25B4415900CC8F44 /* EventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
+		B52E83CF25B4415900CC8F44 /* EventListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListModel.swift; sourceTree = "<group>"; };
 		B52E83D125B4575F00CC8F44 /* NewEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewModel.swift; sourceTree = "<group>"; };
-		B52E83D325B4667300CC8F44 /* DisplayEventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayEventList.swift; sourceTree = "<group>"; };
-		B5389B782573D45400FA2404 /* CreateEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventView.swift; sourceTree = "<group>"; };
+		B52E83D325B4667300CC8F44 /* ViewForShowingEventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewForShowingEventList.swift; sourceTree = "<group>"; };
+		B5389B782573D45400FA2404 /* ViewForAddingNewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewForAddingNewEvent.swift; sourceTree = "<group>"; };
 		B5389B7E2573D79F00FA2404 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B5389B802573DAAE00FA2404 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		B5439732256B25D100413283 /* MapModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModelView.swift; sourceTree = "<group>"; };
@@ -56,7 +61,6 @@
 		B5FAE5C9258FFC1900AFDADE /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseClientConfigurator.swift; sourceTree = "<group>"; };
 		B7225A2A256EF19F0093F5C6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		B7D154902584CA3F0070759B /* CreateEventModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventModelView.swift; sourceTree = "<group>"; };
 		B7D154A42584CD620070759B /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		B7D154AB2584CFD30070759B /* AuthorizaionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizaionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +85,33 @@
 				7D1FA00DC095A6005FAC1F9B /* Pods-DotrixGames.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B52C4A8F25DDB8D100F19C0C /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				B52E83CF25B4415900CC8F44 /* EventListModel.swift */,
+				B52C4A8925DDB04900F19C0C /* EventObject.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		B52C4A9025DDB8FC00F19C0C /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				B52E83D125B4575F00CC8F44 /* NewEventViewModel.swift */,
+				B52C4A8D25DDB6C700F19C0C /* EventStorage.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		B52C4A9125DDBA4400F19C0C /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				B5389B782573D45400FA2404 /* ViewForAddingNewEvent.swift */,
+				B52E83D325B4667300CC8F44 /* ViewForShowingEventList.swift */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 		B52D8D542569827B004F5ED7 = {
@@ -132,7 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				B5389B802573DAAE00FA2404 /* LoginModel.swift */,
-				B52E83CF25B4415900CC8F44 /* EventsModel.swift */,
+				B52C4A8F25DDB8D100F19C0C /* Events */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -140,9 +171,7 @@
 		B5389B762573CA1800FA2404 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				B52E83D125B4575F00CC8F44 /* NewEventViewModel.swift */,
-				B7D154902584CA3F0070759B /* CreateEventModelView.swift */,
-				B52E83D325B4667300CC8F44 /* DisplayEventList.swift */,
+				B52C4A9025DDB8FC00F19C0C /* Event */,
 				B5439732256B25D100413283 /* MapModelView.swift */,
 				B5CD79CB2597B0220010C19E /* Login */,
 			);
@@ -152,8 +181,9 @@
 		B5389B772573CA2500FA2404 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B52C4A9125DDBA4400F19C0C /* Event */,
 				B7225A25256EF15E0093F5C6 /* Login */,
-				B5389B782573D45400FA2404 /* CreateEventView.swift */,
+				B52C4A8B25DDB47400F19C0C /* testView.swift */,
 				B5389B7E2573D79F00FA2404 /* MapView.swift */,
 			);
 			path = View;
@@ -324,23 +354,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7225A2B256EF19F0093F5C6 /* LoginView.swift in Sources */,
-				B52E83D425B4667300CC8F44 /* DisplayEventList.swift in Sources */,
-				B5389B792573D45400FA2404 /* CreateEventView.swift in Sources */,
-				B52E83D025B4415900CC8F44 /* EventsModel.swift in Sources */,
+				B52E83D425B4667300CC8F44 /* ViewForShowingEventList.swift in Sources */,
+				B5389B792573D45400FA2404 /* ViewForAddingNewEvent.swift in Sources */,
+				B52E83D025B4415900CC8F44 /* EventListModel.swift in Sources */,
 				B5FAE5CA258FFC1900AFDADE /* SignUp.swift in Sources */,
 				B5389B812573DAAE00FA2404 /* LoginModel.swift in Sources */,
 				B52D8D612569827B004F5ED7 /* AppDelegate.swift in Sources */,
 				B5439733256B25D100413283 /* MapModelView.swift in Sources */,
+				B52C4A8A25DDB04900F19C0C /* EventObject.swift in Sources */,
 				B552DD71257856BF00374A5D /* LoginViewController.swift in Sources */,
 				B7D154A52584CD620070759B /* CalendarView.swift in Sources */,
 				B52E83D225B4575F00CC8F44 /* NewEventViewModel.swift in Sources */,
 				B52D054825705B4000526B23 /* RegistrationView.swift in Sources */,
+				B52C4A8E25DDB6C700F19C0C /* EventStorage.swift in Sources */,
 				B52D8D632569827B004F5ED7 /* SceneDelegate.swift in Sources */,
 				B7D154AC2584CFD30070759B /* AuthorizaionManager.swift in Sources */,
 				B5389B7F2573D79F00FA2404 /* MapView.swift in Sources */,
+				B52C4A8C25DDB47400F19C0C /* testView.swift in Sources */,
 				B52D8D652569827B004F5ED7 /* ContentView.swift in Sources */,
 				B7225A23256EED3E0093F5C6 /* ParseClientConfigurator.swift in Sources */,
-				B7D154912584CA3F0070759B /* CreateEventModelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

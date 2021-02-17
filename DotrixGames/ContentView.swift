@@ -13,7 +13,7 @@ import MapKit
 struct ContentView: View {
 
     @EnvironmentObject var loginManager: AuthorizaionManager
-    @ObservedObject var modelView =  EventViewModel()
+    @ObservedObject var modelView =  EventListViewModel()
     @ViewBuilder var body: some View {
         
         if loginManager.isUserLoggedIn() {
@@ -40,7 +40,7 @@ struct ContentView: View {
 
 
 struct MenuView: View {
-    @State var modelView: EventViewModel
+    @State var modelView: EventListViewModel
     
     var body: some View {
         VStack {

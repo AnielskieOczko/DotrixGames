@@ -11,14 +11,20 @@ import SwiftUI
 import MapKit
 
 
-struct CreateEventView: View {
-    @ObservedObject var event = Event()
+struct ViewForAddingNewEvent: View {
+    
     @State var showMap = false
     @State private var newPinCoordinate = CLLocationCoordinate2D()
     @State var locations = [MKPointAnnotation]()
+    @State var viewModel: EventListViewModel
     
-    @State var viewModel: EventViewModel
-    
+    var eventTypes: [String] = ["Tournament", "Casual"]
+    @State var name: String = ""
+    @State var type: String = ""
+    @State var playerNumber: Int = 0
+    @State var description: String = ""
+    @State var gameName: String = ""
+    @State var eventOwner: String = ""
     
     var body: some View {
         NavigationView {
@@ -26,16 +32,16 @@ struct CreateEventView: View {
             VStack {
                 Form {
                 // type event name
-                    TextField("Name", text: $event.name)
+                    TextField("Name", text: $name)
                 // pick event type
-                    Picker(selection: $event.type, label: Text("Chose event type")) {
-                        ForEach(0..<Event.types.count) {
-                            Text(Event.types[$0]).tag($0)
+                    Picker(selection: $name, label: Text("Chose event type")) {
+                        ForEach(0..<eventTypes.count) {
+                            Text(self.eventTypes[$0]).tag($0)
                         }
                     }
                 // type min player number
-                    Stepper(value: $event.numberOfPlayers, in: 0...20) {
-                        Text("Number of players  \(event.numberOfPlayers)")
+                    Stepper(value: $playerNumber, in: 0...20) {
+                        Text("Number of players  \(playerNumber)")
                     }
                     
                 // add event location
@@ -44,9 +50,9 @@ struct CreateEventView: View {
                 
                 // add event description
                 // field so small... to change somehowe field size to be multiline and larger
-                    TextField("Add description",text: $event.description)
-                    TextField("Game name",text: $event.gameName)
-                    TextField("Event owner", text: $event.organizators)
+                    TextField("Add description",text: $description)
+                    TextField("Game name",text: $gameName)
+                    TextField("Event owner", text: $eventOwner)
 
                     VStack {
                         HStack{
@@ -64,7 +70,9 @@ struct CreateEventView: View {
                 .navigationBarTitle("Add new event")
                 
                 VStack {
-                    Button(action: { self.viewModel.addNewEvent(event: self.viewModel.createNewEvent(id: 3, name: self.event.name, type: Event.types[self.event.type], mapCoordinator: self.newPinCoordinate, numberOfPlayers: self.event.numberOfPlayers, desciption: self.event.description, gameName: self.event.gameName, organizators: self.event.organizators))  }, label: {
+                    Button(action: {
+                        // here function to add new event to the list
+                    }, label: {
                         Text("Submit")
                     })
                 }
@@ -80,12 +88,19 @@ struct CreateEventView: View {
 
 struct createEvent: View {
 
-    @State var viewModel: EventViewModel
+    @State var viewModel: EventListViewModel
     var body: some View {
-        CreateEventView(viewModel: viewModel)
+        DisplayEventList(viewModel: viewModel)
         .tabItem {
             Text("Add event")
             Image(systemName: "tv.fill")
         }
+    }
+}
+
+
+struct DisplayAddNewEventView_Previews: PreviewProvider {
+    static var previews: some View {
+        ViewForAddingNewEvent(viewModel: EventListViewModel())
     }
 }
