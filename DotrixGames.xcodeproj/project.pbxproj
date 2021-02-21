@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1EA5B0D9694DAC5B12855C3B /* Pods_DotrixGames.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5221EF99761458B15F953CE /* Pods_DotrixGames.framework */; };
 		B52C4A8A25DDB04900F19C0C /* EventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C4A8925DDB04900F19C0C /* EventObject.swift */; };
 		B52C4A8C25DDB47400F19C0C /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C4A8B25DDB47400F19C0C /* testView.swift */; };
 		B52C4A8E25DDB6C700F19C0C /* EventStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C4A8D25DDB6C700F19C0C /* EventStorage.swift */; };
@@ -39,7 +38,6 @@
 /* Begin PBXFileReference section */
 		7D1FA00DC095A6005FAC1F9B /* Pods-DotrixGames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotrixGames.release.xcconfig"; path = "Target Support Files/Pods-DotrixGames/Pods-DotrixGames.release.xcconfig"; sourceTree = "<group>"; };
 		84EA523E8E43E800E9EE1D70 /* Pods-DotrixGames.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotrixGames.debug.xcconfig"; path = "Target Support Files/Pods-DotrixGames/Pods-DotrixGames.debug.xcconfig"; sourceTree = "<group>"; };
-		A5221EF99761458B15F953CE /* Pods_DotrixGames.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotrixGames.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52C4A8925DDB04900F19C0C /* EventObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventObject.swift; sourceTree = "<group>"; };
 		B52C4A8B25DDB47400F19C0C /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		B52C4A8D25DDB6C700F19C0C /* EventStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStorage.swift; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EA5B0D9694DAC5B12855C3B /* Pods_DotrixGames.framework in Frameworks */,
 				B7D1549E2584CD3A0070759B /* ElegantCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,7 +123,6 @@
 				B52D8D5F2569827B004F5ED7 /* DotrixGames */,
 				B52D8D5E2569827B004F5ED7 /* Products */,
 				342E7222D9AC6BE3E53F4056 /* Pods */,
-				E194E2FA82EC40E821F3EE62 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,14 +226,6 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		E194E2FA82EC40E821F3EE62 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A5221EF99761458B15F953CE /* Pods_DotrixGames.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -270,7 +258,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = RafalDX;
 				TargetAttributes = {
 					B52D8D5C2569827B004F5ED7 = {
@@ -279,7 +267,7 @@
 				};
 			};
 			buildConfigurationList = B52D8D582569827B004F5ED7 /* Build configuration list for PBXProject "DotrixGames" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.4";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -424,6 +412,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -434,6 +423,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -484,6 +474,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -494,6 +485,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -519,6 +511,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"DotrixGames/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = DotrixGames/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -539,6 +532,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"DotrixGames/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = DotrixGames/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
