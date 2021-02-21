@@ -16,7 +16,7 @@ struct ViewForAddingNewEvent: View {
     @State var showMap = false
     @State private var newPinCoordinate = CLLocationCoordinate2D()
     @State var locations = [MKPointAnnotation]()
-    @State var viewModel: EventListViewModel
+    @State var viewModel: AddNewEventModelView
     
     var eventTypes: [String] = ["Tournament", "Casual"]
     @State var name: String = ""
@@ -35,8 +35,8 @@ struct ViewForAddingNewEvent: View {
                     TextField("Name", text: $name)
                 // pick event type
                     Picker(selection: $name, label: Text("Chose event type")) {
-                        ForEach(0..<eventTypes.count) {
-                            Text(self.eventTypes[$0]).tag($0)
+                        ForEach(0..<viewModel.eventTypes.count) {
+                            Text(self.viewModel.eventTypes[$0]).tag($0)
                         }
                     }
                 // type min player number
@@ -101,6 +101,6 @@ struct createEvent: View {
 
 struct DisplayAddNewEventView_Previews: PreviewProvider {
     static var previews: some View {
-        ViewForAddingNewEvent(viewModel: EventListViewModel())
+        ViewForAddingNewEvent(viewModel: AddNewEventModelView())
     }
 }

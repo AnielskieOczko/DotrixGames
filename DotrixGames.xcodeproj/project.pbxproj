@@ -18,6 +18,8 @@
 		B52D8D672569827C004F5ED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52D8D662569827C004F5ED7 /* Assets.xcassets */; };
 		B52D8D6A2569827C004F5ED7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52D8D692569827C004F5ED7 /* Preview Assets.xcassets */; };
 		B52D8D6D2569827C004F5ED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52D8D6B2569827C004F5ED7 /* LaunchScreen.storyboard */; };
+		B52DE4C325DF1C5500C83BF3 /* ModelAddNewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52DE4C225DF1C5500C83BF3 /* ModelAddNewEventView.swift */; };
+		B52DE4C525DF1CF200C83BF3 /* ModelViewAddNewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52DE4C425DF1CF200C83BF3 /* ModelViewAddNewEvent.swift */; };
 		B52E83D025B4415900CC8F44 /* EventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E83CF25B4415900CC8F44 /* EventListModel.swift */; };
 		B52E83D225B4575F00CC8F44 /* NewEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E83D125B4575F00CC8F44 /* NewEventViewModel.swift */; };
 		B52E83D425B4667300CC8F44 /* ViewForShowingEventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E83D325B4667300CC8F44 /* ViewForShowingEventList.swift */; };
@@ -50,6 +52,8 @@
 		B52D8D692569827C004F5ED7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B52D8D6C2569827C004F5ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B52D8D6E2569827C004F5ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B52DE4C225DF1C5500C83BF3 /* ModelAddNewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAddNewEventView.swift; sourceTree = "<group>"; };
+		B52DE4C425DF1CF200C83BF3 /* ModelViewAddNewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelViewAddNewEvent.swift; sourceTree = "<group>"; };
 		B52E83CF25B4415900CC8F44 /* EventListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListModel.swift; sourceTree = "<group>"; };
 		B52E83D125B4575F00CC8F44 /* NewEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewModel.swift; sourceTree = "<group>"; };
 		B52E83D325B4667300CC8F44 /* ViewForShowingEventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewForShowingEventList.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 			children = (
 				B52E83CF25B4415900CC8F44 /* EventListModel.swift */,
 				B52C4A8925DDB04900F19C0C /* EventObject.swift */,
+				B52DE4C225DF1C5500C83BF3 /* ModelAddNewEventView.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 		B52C4A9025DDB8FC00F19C0C /* Event */ = {
 			isa = PBXGroup;
 			children = (
+				B52DE4C425DF1CF200C83BF3 /* ModelViewAddNewEvent.swift */,
 				B52E83D125B4575F00CC8F44 /* NewEventViewModel.swift */,
 				B52C4A8D25DDB6C700F19C0C /* EventStorage.swift */,
 			);
@@ -363,6 +369,7 @@
 				B5439733256B25D100413283 /* MapModelView.swift in Sources */,
 				B52C4A8A25DDB04900F19C0C /* EventObject.swift in Sources */,
 				B552DD71257856BF00374A5D /* LoginViewController.swift in Sources */,
+				B52DE4C525DF1CF200C83BF3 /* ModelViewAddNewEvent.swift in Sources */,
 				B7D154A52584CD620070759B /* CalendarView.swift in Sources */,
 				B52E83D225B4575F00CC8F44 /* NewEventViewModel.swift in Sources */,
 				B52D054825705B4000526B23 /* RegistrationView.swift in Sources */,
@@ -370,6 +377,7 @@
 				B52D8D632569827B004F5ED7 /* SceneDelegate.swift in Sources */,
 				B7D154AC2584CFD30070759B /* AuthorizaionManager.swift in Sources */,
 				B5389B7F2573D79F00FA2404 /* MapView.swift in Sources */,
+				B52DE4C325DF1C5500C83BF3 /* ModelAddNewEventView.swift in Sources */,
 				B52C4A8C25DDB47400F19C0C /* testView.swift in Sources */,
 				B52D8D652569827B004F5ED7 /* ContentView.swift in Sources */,
 				B7225A23256EED3E0093F5C6 /* ParseClientConfigurator.swift in Sources */,

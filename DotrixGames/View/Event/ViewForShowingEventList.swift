@@ -12,7 +12,7 @@ import MapKit
 struct DisplayEventList: View {
     
     @State var viewModel: EventListViewModel
-    
+    @State var openViewForAddingNewEvent: Bool = false
     
     var body: some View {
         
@@ -58,7 +58,6 @@ struct DisplayEventList: View {
 
 struct HeaderView: View {
     var body: some View {
-        
         HStack(spacing: 20){
             Image(systemName: "tv")
             .resizable()
@@ -75,6 +74,7 @@ struct HeaderView: View {
             
         Button(action: {
             // here function to open view for adding new event
+
         },label: {
             Image(systemName: "plus")
                 .font(.largeTitle)
@@ -83,19 +83,24 @@ struct HeaderView: View {
                 
         })
             
-        Button(action: {},label: {
+        Button(action: {
+            // search event
+        },label: {
             Image(systemName: "magnifyingglass")
                 .font(.largeTitle)
                 .foregroundColor(.gray)
                 .offset(x: -10)
         })
             
-        Button(action: {},label: {
+        Button(action: {
+            // button to edit profile
+        },label: {
             Image(systemName: "person.fill")
                 .font(.largeTitle)
                 .foregroundColor(.gray)
                 .offset(x: -10)
         })
+            
             
 
         }
@@ -109,7 +114,7 @@ struct HeaderView: View {
         )
     }
 }
-
+// https://blckbirds.com/post/how-to-navigate-between-views-in-swiftui-by-using-an-environmentobject/
 
 
 struct DisplayEventList_Previews: PreviewProvider {
