@@ -21,6 +21,7 @@ struct ContentView: View {
                 MenuView(modelView: modelView)
                 MapDisplayView()
                 createEvent(viewModel: modelView)
+                MainView()
                 //signUpView()
                 //MapDisplayView()
                 //LoginView()

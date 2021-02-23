@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14FE562BE582C01D2EFD4BB3 /* Pods_DotrixGames.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65640F599AD2A8AC8C8AA4FE /* Pods_DotrixGames.framework */; };
 		B52C4A8A25DDB04900F19C0C /* EventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C4A8925DDB04900F19C0C /* EventObject.swift */; };
 		B52C4A8C25DDB47400F19C0C /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C4A8B25DDB47400F19C0C /* testView.swift */; };
 		B52C4A8E25DDB6C700F19C0C /* EventStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C4A8D25DDB6C700F19C0C /* EventStorage.swift */; };
@@ -27,6 +28,8 @@
 		B5389B812573DAAE00FA2404 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5389B802573DAAE00FA2404 /* LoginModel.swift */; };
 		B5439733256B25D100413283 /* MapModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5439732256B25D100413283 /* MapModelView.swift */; };
 		B552DD71257856BF00374A5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552DD70257856BF00374A5D /* LoginViewController.swift */; };
+		B562DF8525E58BB5003DD83E /* EventFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B562DF8425E58BB5003DD83E /* EventFetcher.swift */; };
+		B5A7833A25E4731800018767 /* DisplayEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7833925E4731800018767 /* DisplayEventView.swift */; };
 		B5FAE5CA258FFC1900AFDADE /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FAE5C9258FFC1900AFDADE /* SignUp.swift */; };
 		B7225A23256EED3E0093F5C6 /* ParseClientConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */; };
 		B7225A2B256EF19F0093F5C6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7225A2A256EF19F0093F5C6 /* LoginView.swift */; };
@@ -36,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65640F599AD2A8AC8C8AA4FE /* Pods_DotrixGames.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotrixGames.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1FA00DC095A6005FAC1F9B /* Pods-DotrixGames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotrixGames.release.xcconfig"; path = "Target Support Files/Pods-DotrixGames/Pods-DotrixGames.release.xcconfig"; sourceTree = "<group>"; };
 		84EA523E8E43E800E9EE1D70 /* Pods-DotrixGames.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotrixGames.debug.xcconfig"; path = "Target Support Files/Pods-DotrixGames/Pods-DotrixGames.debug.xcconfig"; sourceTree = "<group>"; };
 		B52C4A8925DDB04900F19C0C /* EventObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventObject.swift; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 		B5389B802573DAAE00FA2404 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		B5439732256B25D100413283 /* MapModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModelView.swift; sourceTree = "<group>"; };
 		B552DD70257856BF00374A5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B562DF8425E58BB5003DD83E /* EventFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFetcher.swift; sourceTree = "<group>"; };
+		B5A7833925E4731800018767 /* DisplayEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayEventView.swift; sourceTree = "<group>"; };
 		B5FAE5C9258FFC1900AFDADE /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseClientConfigurator.swift; sourceTree = "<group>"; };
 		B7225A2A256EF19F0093F5C6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -73,6 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7D1549E2584CD3A0070759B /* ElegantCalendar in Frameworks */,
+				14FE562BE582C01D2EFD4BB3 /* Pods_DotrixGames.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +93,14 @@
 				7D1FA00DC095A6005FAC1F9B /* Pods-DotrixGames.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		78DF9265445F20075293A061 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65640F599AD2A8AC8C8AA4FE /* Pods_DotrixGames.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B52C4A8F25DDB8D100F19C0C /* Events */ = {
@@ -103,6 +118,7 @@
 			children = (
 				B52DE4C425DF1CF200C83BF3 /* ModelViewAddNewEvent.swift */,
 				B52E83D125B4575F00CC8F44 /* NewEventViewModel.swift */,
+				B562DF8425E58BB5003DD83E /* EventFetcher.swift */,
 				B52C4A8D25DDB6C700F19C0C /* EventStorage.swift */,
 			);
 			path = Event;
@@ -113,6 +129,7 @@
 			children = (
 				B5389B782573D45400FA2404 /* ViewForAddingNewEvent.swift */,
 				B52E83D325B4667300CC8F44 /* ViewForShowingEventList.swift */,
+				B5A7833925E4731800018767 /* DisplayEventView.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -123,6 +140,7 @@
 				B52D8D5F2569827B004F5ED7 /* DotrixGames */,
 				B52D8D5E2569827B004F5ED7 /* Products */,
 				342E7222D9AC6BE3E53F4056 /* Pods */,
+				78DF9265445F20075293A061 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -351,9 +369,11 @@
 				B52E83D425B4667300CC8F44 /* ViewForShowingEventList.swift in Sources */,
 				B5389B792573D45400FA2404 /* ViewForAddingNewEvent.swift in Sources */,
 				B52E83D025B4415900CC8F44 /* EventListModel.swift in Sources */,
+				B562DF8525E58BB5003DD83E /* EventFetcher.swift in Sources */,
 				B5FAE5CA258FFC1900AFDADE /* SignUp.swift in Sources */,
 				B5389B812573DAAE00FA2404 /* LoginModel.swift in Sources */,
 				B52D8D612569827B004F5ED7 /* AppDelegate.swift in Sources */,
+				B5A7833A25E4731800018767 /* DisplayEventView.swift in Sources */,
 				B5439733256B25D100413283 /* MapModelView.swift in Sources */,
 				B52C4A8A25DDB04900F19C0C /* EventObject.swift in Sources */,
 				B552DD71257856BF00374A5D /* LoginViewController.swift in Sources */,

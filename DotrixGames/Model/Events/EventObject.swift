@@ -20,4 +20,8 @@ struct Event: Identifiable {
     var description: String?
     var gameName: String?
     var organizators: String?
+    
+    
 }
+
+

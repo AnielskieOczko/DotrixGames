@@ -45,6 +45,8 @@ struct EventsList {
         return eventList
     }
     
+    
+    
 //    func createNewEvent(id: Int,
 //                        name: String,
 //                        type: String,

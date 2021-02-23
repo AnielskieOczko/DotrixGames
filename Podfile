@@ -4,7 +4,7 @@
 target 'DotrixGames' do
   use_frameworks!
 
-pod 'Parse'
-pod 'Parse/FacebookUtils'
+pod 'Parse', "1.19.1"
+pod 'Parse/FacebookUtils', "1.19.1"
 
 end

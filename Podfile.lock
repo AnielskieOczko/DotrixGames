@@ -20,8 +20,8 @@ PODS:
     - Parse/Core
 
 DEPENDENCIES:
-  - Parse
-  - Parse/FacebookUtils
+  - Parse (= 1.19.1)
+  - Parse/FacebookUtils (= 1.19.1)
 
 SPEC REPOS:
   trunk:
@@ -36,6 +36,6 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: caa165495afa29a12324cb2307fe6e5b33783142
   Parse: e40fdb9c7d665823b7fe9865949cac9a53eb2ce7
 
-PODFILE CHECKSUM: d6e8e6d77029a57e1e6245b048ab08450d1f7f40
+PODFILE CHECKSUM: 76e87ba3d7375b906e5166ac38b8471915affbe1
 
 COCOAPODS: 1.10.0
