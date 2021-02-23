@@ -90,7 +90,7 @@ struct createEvent: View {
 
     @State var viewModel: EventListViewModel
     var body: some View {
-        DisplayEventList(viewModel: viewModel)
+        MainView(viewModel: viewModel)
         .tabItem {
             Text("Add event")
             Image(systemName: "tv.fill")

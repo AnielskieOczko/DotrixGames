@@ -21,7 +21,7 @@ struct ContentView: View {
                 MenuView(modelView: modelView)
                 MapDisplayView()
                 createEvent(viewModel: modelView)
-                MainView()
+                //MainView()
                 //signUpView()
                 //MapDisplayView()
                 //LoginView()
@@ -45,7 +45,8 @@ struct MenuView: View {
     
     var body: some View {
         VStack {
-            DisplayEventList(viewModel: modelView)
+            //DisplayEventList(viewModel: modelView)
+            MainView(viewModel: EventListViewModel())
         }
         .tabItem {
             Text("Menu")

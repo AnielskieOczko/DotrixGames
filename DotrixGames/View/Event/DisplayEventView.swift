@@ -12,22 +12,25 @@ import Parse
 
 struct MainView: View {
     
+    @State var viewModel: EventListViewModel
+    
+//    @State var events = [
+//        Event(id: 1, name: "Dota LAN Event", numberOfPlayers: 100, description: "Test description Test description Test description Test description Test description Test description", gameName: "Dota", organizators: "Dotrix"),
+//        Event(id: 2, name: "Dota LAN Event", numberOfPlayers: 100, description: "Test description Test description Test description Test description Test description Test description", gameName: "Dota", organizators: "Dotrix"),
+//        Event(id: 3, name: "Dota LAN Event", numberOfPlayers: 100, description: "Test description Test description Test description Test description Test description Test description", gameName: "Dota", organizators: "Dotrix")]
     
 
-    @State var events = [
-        Event(id: 1, name: "Dota LAN Event", numberOfPlayers: 100, description: "Test description Test description Test description Test description Test description Test description", gameName: "Dota", organizators: "Dotrix"),
-        Event(id: 2, name: "Dota LAN Event", numberOfPlayers: 100, description: "Test description Test description Test description Test description Test description Test description", gameName: "Dota", organizators: "Dotrix"),
-        Event(id: 3, name: "Dota LAN Event", numberOfPlayers: 100, description: "Test description Test description Test description Test description Test description Test description", gameName: "Dota", organizators: "Dotrix")]
 
     var body: some View {
 
             NavigationView {
                 VStack {
-                HeaderView()
+                HeaderView2()
                     .zIndex(1)
-                List(events) { event in
+                    List(viewModel.model) { event in
                         NavigationLink(destination: EventView(event: event)) {
-                            Text("Event \(event.id)")
+                            Text("Event \(event.name!)")
+                            Text("Event \(event.type!)")
                         }
                 }
                 .buttonStyle(PlainButtonStyle())
@@ -170,7 +173,7 @@ struct HeaderView2: View {
 
 struct DisplayMainView: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(viewModel: EventListViewModel())
         //EventView(event: Event(id: 1, name: "Dota LAN Event", numberOfPlayers: 100, description: "Test description Test description Test description Test description Test description Test description", gameName: "Dota", organizators: "Dotrix"))
     }
 }

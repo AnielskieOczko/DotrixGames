@@ -12,51 +12,57 @@ import MapKit
 
 class EventListViewModel: ObservableObject {
 
-    @Published private var model: EventsList = EventListViewModel.createEventList()
+    @Published var model: [Event] = []
+    let fetcher = EventFetcher()
     
-    static func createEventList() -> EventsList {
+    init() {
+        fetcher.getEvent { [weak self] (event) in
+            self?.model.append(event!)
+        }
+    }
+    func fetchEventList() {
         
-        let testEvent1 = Event(id: 1,
-                                          name: "test name1",
-                                          type: "Casaul",
-                                          mapCoordinates: CLLocationCoordinate2D(latitude: 0.00, longitude: 0.00),
-                                          numberOfPlayers: 1,
-                                          description: "test description1",
-                                          gameName: "Szachy",
-                                          organizators: "test organizer1")
-        let testEvent2 = Event(id: 2,
-                                          name: "test name2",
-                                          type: "Tournament",
-                                          mapCoordinates: CLLocationCoordinate2D(latitude: 0.00, longitude: 0.00),
-                                          numberOfPlayers: 1,
-                                          description: "test description2",
-                                          gameName: "Szachy",
-                                          organizators: "test organizer2")
-        
-        var events = [Event]()
-        events.append(testEvent1)
-        events.append(testEvent2)
+//        let testEvent1 = Event(id: 1,
+//                                          name: "test name1",
+//                                          type: "Casaul",
+//                                          mapCoordinates: CLLocationCoordinate2D(latitude: 0.00, longitude: 0.00),
+//                                          numberOfPlayers: 1,
+//                                          description: "test description1",
+//                                          gameName: "Szachy",
+//                                          organizators: "test organizer1")
+//        let testEvent2 = Event(id: 2,
+//                                          name: "test name2",
+//                                          type: "Tournament",
+//                                          mapCoordinates: CLLocationCoordinate2D(latitude: 0.00, longitude: 0.00),
+//                                          numberOfPlayers: 1,
+//                                          description: "test description2",
+//                                          gameName: "Szachy",
+//                                          organizators: "test organizer2")
         
         
-        return EventsList(events: events)
+        
+        fetcher.getEvent { [weak self] (event) in
+            self?.model.append(event!)
+        }
+        
     }
     
-    // MARK: Access to the model
-    var events: [Event] {
-        model.getEventList()
-    }
-    
+//    // MARK: Access to the model
+//    var events: [Event] {
+////        model.getEventList()
+//    }
+//
     // MARK: Intent(s)
     func addNewEvent(event: Event) {
-        model.addEvent(newEvent: event)
+//        model.addEvent(newEvent: event)
     }
     
     func removeEvent(event: Event) {
-        model.removeEvent(event: event)
+//        model.removeEvent(event: event)
     }
     
     func editEvent(event: Event) {
-        model.editEvent()
+//        model.editEvent()
     }
     
 //    func createNewEvent(id: Int,
