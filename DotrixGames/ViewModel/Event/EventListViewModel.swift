@@ -13,15 +13,19 @@ import MapKit
 class EventListViewModel: ObservableObject {
 
     @Published var model: [Event] = []
+    //@Published var model: EventsList = EventsList()
     let fetcher = EventFetcher()
+    
     
     init() {
         fetcher.getEvent { [weak self] (event) in
             self?.model.append(event!)
+            //self?.model.eventList.append(event!)
         }
     }
-    func fetchEventList() {
-        
+    
+//    func fetchEventList() {
+//
 //        let testEvent1 = Event(id: 1,
 //                                          name: "test name1",
 //                                          type: "Casaul",
@@ -38,14 +42,14 @@ class EventListViewModel: ObservableObject {
 //                                          description: "test description2",
 //                                          gameName: "Szachy",
 //                                          organizators: "test organizer2")
-        
-        
-        
-        fetcher.getEvent { [weak self] (event) in
-            self?.model.append(event!)
-        }
-        
-    }
+//
+//
+//
+//        fetcher.getEvent { [weak self] (event) in
+//            self?.model.eventList.append(event!)
+//        }
+//
+//    }
     
 //    // MARK: Access to the model
 //    var events: [Event] {
@@ -54,7 +58,10 @@ class EventListViewModel: ObservableObject {
 //
     // MARK: Intent(s)
     func addNewEvent(event: Event) {
+        model.append(event)
+        fetcher.addEvent(from: event)
 //        model.addEvent(newEvent: event)
+        
     }
     
     func removeEvent(event: Event) {

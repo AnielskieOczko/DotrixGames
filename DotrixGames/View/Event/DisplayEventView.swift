@@ -5,15 +5,17 @@
 //  Created by Rafal on 21/02/2021.
 //  Copyright © 2021 RafalDX. All rights reserved.
 //
-
+//// https://blckbirds.com/post/how-to-navigate-between-views-in-swiftui-by-using-an-environmentobject/
 
 import SwiftUI
 import Parse
 
 struct MainView: View {
     
-    @State var viewModel: EventListViewModel
+    //@State var showView = false
     
+    @ObservedObject var viewModel: EventListViewModel
+    //@ObservedObject var viewModel: EventListViewModel
 //    @State var events = [
 //        Event(id: 1, name: "Dota LAN Event", numberOfPlayers: 100, description: "Test description Test description Test description Test description Test description Test description", gameName: "Dota", organizators: "Dotrix"),
 //        Event(id: 2, name: "Dota LAN Event", numberOfPlayers: 100, description: "Test description Test description Test description Test description Test description Test description", gameName: "Dota", organizators: "Dotrix"),
@@ -25,14 +27,17 @@ struct MainView: View {
 
             NavigationView {
                 VStack {
-                HeaderView2()
+                    HeaderView(viewModel: viewModel)
                     .zIndex(1)
                     List(viewModel.model) { event in
-                        NavigationLink(destination: EventView(event: event)) {
+                        NavigationLink(destination: EventView(event: event, viewModel: viewModel)) {
                             Text("Event \(event.name!)")
                             Text("Event \(event.type!)")
                         }
                 }
+                    .onAppear(perform: {
+                        print(viewModel.model)
+                    })
                 .buttonStyle(PlainButtonStyle())
                 .listStyle(GroupedListStyle())
                 }
@@ -45,11 +50,12 @@ struct MainView: View {
 
 struct EventView: View {
     @State var event: Event
+    @State var viewModel: EventListViewModel
     
     var body: some View {
         
         VStack(spacing: 20) {
-            HeaderView2()
+            HeaderView(viewModel: viewModel)
 
             HStack(spacing: 100){
                 Image(systemName: "tv")
@@ -124,35 +130,56 @@ struct EventView: View {
 
 
 
-struct HeaderView2: View {
+struct HeaderView: View {
+    
+    @State var viewModel: EventListViewModel
+    @State var showAddNewEventView: Bool = false
+    
     var body: some View {
         HStack(spacing: 20){
+            Image(systemName: "book")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 40, height: 40)
 
-            
-        Text("User Name")
+        Text("Event List")
             .font(.headline)
             .fontWeight(.bold)
             .foregroundColor(.black)
             .kerning(0.5)
-        
+
         Spacer(minLength:0)
+
             
-            
+        NavigationLink(
+            destination: AddNewEventView(viewModel: viewModel),
+            isActive: $showAddNewEventView,
+            label: {
+                Button(action: {
+                    // here function to open view for adding new event
+                    showAddNewEventView = true
+                },label: {
+                    Image(systemName: "plus")
+                        .font(.largeTitle)
+                        .foregroundColor(.gray)
+                        .offset(x: -10)
+
+                })
+            })
+
+
         Button(action: {
-            // button to edit profile
+            // search event
         },label: {
-            Image(systemName: "person.fill")
+            Image(systemName: "magnifyingglass")
                 .font(.largeTitle)
                 .foregroundColor(.gray)
                 .offset(x: -10)
         })
-            
-            
-
-        }
+    }
         .padding(.horizontal)
-        .padding(.vertical, 10)
-        
+        .padding(.vertical, 8)
+
         // Divider
         .overlay(
             Divider()

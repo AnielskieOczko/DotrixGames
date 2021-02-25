@@ -23,7 +23,7 @@
 //            ScrollView(.vertical, showsIndicators: false,
 //                content: {
 //
-//                    ForEach() {event in
+//                    ForEach(viewModel.eve) {event in
 //                        VStack(spacing: 20) {
 //                            HStack(spacing: 20) {
 //                                Image(systemName: "tv")

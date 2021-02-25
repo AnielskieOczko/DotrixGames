@@ -19,9 +19,9 @@
 		B52D8D6A2569827C004F5ED7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52D8D692569827C004F5ED7 /* Preview Assets.xcassets */; };
 		B52D8D6D2569827C004F5ED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52D8D6B2569827C004F5ED7 /* LaunchScreen.storyboard */; };
 		B52DE4C325DF1C5500C83BF3 /* ModelAddNewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52DE4C225DF1C5500C83BF3 /* ModelAddNewEventView.swift */; };
-		B52DE4C525DF1CF200C83BF3 /* ModelViewAddNewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52DE4C425DF1CF200C83BF3 /* ModelViewAddNewEvent.swift */; };
+		B52DE4C525DF1CF200C83BF3 /* AddNewEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52DE4C425DF1CF200C83BF3 /* AddNewEventViewModel.swift */; };
 		B52E83D025B4415900CC8F44 /* EventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E83CF25B4415900CC8F44 /* EventListModel.swift */; };
-		B52E83D225B4575F00CC8F44 /* NewEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E83D125B4575F00CC8F44 /* NewEventViewModel.swift */; };
+		B52E83D225B4575F00CC8F44 /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E83D125B4575F00CC8F44 /* EventListViewModel.swift */; };
 		B52E83D425B4667300CC8F44 /* ViewForShowingEventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52E83D325B4667300CC8F44 /* ViewForShowingEventList.swift */; };
 		B5389B792573D45400FA2404 /* ViewForAddingNewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5389B782573D45400FA2404 /* ViewForAddingNewEvent.swift */; };
 		B5389B7F2573D79F00FA2404 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5389B7E2573D79F00FA2404 /* MapView.swift */; };
@@ -29,6 +29,7 @@
 		B5439733256B25D100413283 /* MapModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5439732256B25D100413283 /* MapModelView.swift */; };
 		B552DD71257856BF00374A5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552DD70257856BF00374A5D /* LoginViewController.swift */; };
 		B562DF8525E58BB5003DD83E /* EventFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B562DF8425E58BB5003DD83E /* EventFetcher.swift */; };
+		B5916F7125E71C760086C479 /* ViewAddNewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5916F7025E71C760086C479 /* ViewAddNewEvent.swift */; };
 		B5A7833A25E4731800018767 /* DisplayEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7833925E4731800018767 /* DisplayEventView.swift */; };
 		B5FAE5CA258FFC1900AFDADE /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FAE5C9258FFC1900AFDADE /* SignUp.swift */; };
 		B7225A23256EED3E0093F5C6 /* ParseClientConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */; };
@@ -55,9 +56,9 @@
 		B52D8D6C2569827C004F5ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B52D8D6E2569827C004F5ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B52DE4C225DF1C5500C83BF3 /* ModelAddNewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAddNewEventView.swift; sourceTree = "<group>"; };
-		B52DE4C425DF1CF200C83BF3 /* ModelViewAddNewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelViewAddNewEvent.swift; sourceTree = "<group>"; };
+		B52DE4C425DF1CF200C83BF3 /* AddNewEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewEventViewModel.swift; sourceTree = "<group>"; };
 		B52E83CF25B4415900CC8F44 /* EventListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListModel.swift; sourceTree = "<group>"; };
-		B52E83D125B4575F00CC8F44 /* NewEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewModel.swift; sourceTree = "<group>"; };
+		B52E83D125B4575F00CC8F44 /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
 		B52E83D325B4667300CC8F44 /* ViewForShowingEventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewForShowingEventList.swift; sourceTree = "<group>"; };
 		B5389B782573D45400FA2404 /* ViewForAddingNewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewForAddingNewEvent.swift; sourceTree = "<group>"; };
 		B5389B7E2573D79F00FA2404 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 		B5439732256B25D100413283 /* MapModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModelView.swift; sourceTree = "<group>"; };
 		B552DD70257856BF00374A5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B562DF8425E58BB5003DD83E /* EventFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFetcher.swift; sourceTree = "<group>"; };
+		B5916F7025E71C760086C479 /* ViewAddNewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAddNewEvent.swift; sourceTree = "<group>"; };
 		B5A7833925E4731800018767 /* DisplayEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayEventView.swift; sourceTree = "<group>"; };
 		B5FAE5C9258FFC1900AFDADE /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseClientConfigurator.swift; sourceTree = "<group>"; };
@@ -116,10 +118,8 @@
 		B52C4A9025DDB8FC00F19C0C /* Event */ = {
 			isa = PBXGroup;
 			children = (
-				B52DE4C425DF1CF200C83BF3 /* ModelViewAddNewEvent.swift */,
-				B52E83D125B4575F00CC8F44 /* NewEventViewModel.swift */,
-				B562DF8425E58BB5003DD83E /* EventFetcher.swift */,
-				B52C4A8D25DDB6C700F19C0C /* EventStorage.swift */,
+				B52DE4C425DF1CF200C83BF3 /* AddNewEventViewModel.swift */,
+				B52E83D125B4575F00CC8F44 /* EventListViewModel.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -128,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				B5389B782573D45400FA2404 /* ViewForAddingNewEvent.swift */,
-				B52E83D325B4667300CC8F44 /* ViewForShowingEventList.swift */,
+				B5916F7025E71C760086C479 /* ViewAddNewEvent.swift */,
 				B5A7833925E4731800018767 /* DisplayEventView.swift */,
 			);
 			path = Event;
@@ -155,6 +155,7 @@
 		B52D8D5F2569827B004F5ED7 /* DotrixGames */ = {
 			isa = PBXGroup;
 			children = (
+				B573A40A25E706210030FC41 /* notInUse */,
 				B7D154A02584CD4A0070759B /* Calendar */,
 				B5389B762573CA1800FA2404 /* ViewModel */,
 				B5389B752573CA0F00FA2404 /* Model */,
@@ -203,10 +204,19 @@
 			children = (
 				B52C4A9125DDBA4400F19C0C /* Event */,
 				B7225A25256EF15E0093F5C6 /* Login */,
-				B52C4A8B25DDB47400F19C0C /* testView.swift */,
 				B5389B7E2573D79F00FA2404 /* MapView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B573A40A25E706210030FC41 /* notInUse */ = {
+			isa = PBXGroup;
+			children = (
+				B52E83D325B4667300CC8F44 /* ViewForShowingEventList.swift */,
+				B52C4A8B25DDB47400F19C0C /* testView.swift */,
+				B52C4A8D25DDB6C700F19C0C /* EventStorage.swift */,
+			);
+			path = notInUse;
 			sourceTree = "<group>";
 		};
 		B5CD79CB2597B0220010C19E /* Login */ = {
@@ -222,6 +232,7 @@
 		B7225A1F256EECED0093F5C6 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				B562DF8425E58BB5003DD83E /* EventFetcher.swift */,
 				B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */,
 			);
 			path = Networking;
@@ -370,6 +381,7 @@
 				B5389B792573D45400FA2404 /* ViewForAddingNewEvent.swift in Sources */,
 				B52E83D025B4415900CC8F44 /* EventListModel.swift in Sources */,
 				B562DF8525E58BB5003DD83E /* EventFetcher.swift in Sources */,
+				B5916F7125E71C760086C479 /* ViewAddNewEvent.swift in Sources */,
 				B5FAE5CA258FFC1900AFDADE /* SignUp.swift in Sources */,
 				B5389B812573DAAE00FA2404 /* LoginModel.swift in Sources */,
 				B52D8D612569827B004F5ED7 /* AppDelegate.swift in Sources */,
@@ -377,9 +389,9 @@
 				B5439733256B25D100413283 /* MapModelView.swift in Sources */,
 				B52C4A8A25DDB04900F19C0C /* EventObject.swift in Sources */,
 				B552DD71257856BF00374A5D /* LoginViewController.swift in Sources */,
-				B52DE4C525DF1CF200C83BF3 /* ModelViewAddNewEvent.swift in Sources */,
+				B52DE4C525DF1CF200C83BF3 /* AddNewEventViewModel.swift in Sources */,
 				B7D154A52584CD620070759B /* CalendarView.swift in Sources */,
-				B52E83D225B4575F00CC8F44 /* NewEventViewModel.swift in Sources */,
+				B52E83D225B4575F00CC8F44 /* EventListViewModel.swift in Sources */,
 				B52D054825705B4000526B23 /* RegistrationView.swift in Sources */,
 				B52C4A8E25DDB6C700F19C0C /* EventStorage.swift in Sources */,
 				B52D8D632569827B004F5ED7 /* SceneDelegate.swift in Sources */,

@@ -24,6 +24,7 @@ private class EventFactory {
 }
 
 class EventFetcher {
+    //qNGCFe8ata
     func getEvent(with id: String = "qNGCFe8ata", completionBlock: @escaping (Event?) -> Void) {
         let query = PFQuery(className:"Event")
 
@@ -35,4 +36,23 @@ class EventFetcher {
             }
         }
     }
+    
+    func addEvent(from event: Event) {
+        let query = PFObject(className:"Event")
+        query["name"] = event.name!
+        query["type"] = event.type!
+        query.saveInBackground {
+          (success: Bool, error: Error?) in
+          if (success) {
+            // The object has been saved.
+            print("RJ: event added")
+          } else {
+            // There was a problem, check error.description
+            print("RJ: ", error!)
+          }
+        }
+    }
+    
+    
+    
 }

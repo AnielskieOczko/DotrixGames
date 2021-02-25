@@ -11,16 +11,10 @@ import MapKit
 
 struct EventsList {
     
-    var eventList: [Event]
     
+    var eventList: [Event] = []
     
-    init(events: [Event]) {
-        eventList = []
-        
-        for index in 0..<events.count {
-            eventList.append(events[index])
-        }
-    }
+
     
     
     mutating func addEvent(newEvent: Event) {
@@ -44,27 +38,6 @@ struct EventsList {
     func getEventList() -> [Event] {
         return eventList
     }
-    
-    
-    
-//    func createNewEvent(id: Int,
-//                        name: String,
-//                        type: String,
-//                        mapCoordinator: CLLocationCoordinate2D,
-//                        numberOfPlayers: Int,
-//                        desciption: String,
-//                        gameName: String,
-//                        organizators: String) -> Event {
-//
-//        Event(id: id,
-//              name: name,
-//              type: type,
-//              mapCoordinates: mapCoordinator,
-//              numberOfPlayers: numberOfPlayers,
-//              description: desciption,
-//              gameName: gameName,
-//              organizators: organizators)
-//    }
 }
 
 
