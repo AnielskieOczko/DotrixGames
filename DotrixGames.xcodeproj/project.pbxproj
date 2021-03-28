@@ -29,6 +29,7 @@
 		B5439733256B25D100413283 /* MapModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5439732256B25D100413283 /* MapModelView.swift */; };
 		B552DD71257856BF00374A5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552DD70257856BF00374A5D /* LoginViewController.swift */; };
 		B562DF8525E58BB5003DD83E /* EventFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B562DF8425E58BB5003DD83E /* EventFetcher.swift */; };
+		B58232922610BC6100D043F2 /* MyEventsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58232912610BC6100D043F2 /* MyEventsList.swift */; };
 		B5916F7125E71C760086C479 /* ViewAddNewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5916F7025E71C760086C479 /* ViewAddNewEvent.swift */; };
 		B5A7833A25E4731800018767 /* DisplayEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7833925E4731800018767 /* DisplayEventView.swift */; };
 		B5FAE5CA258FFC1900AFDADE /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FAE5C9258FFC1900AFDADE /* SignUp.swift */; };
@@ -66,6 +67,7 @@
 		B5439732256B25D100413283 /* MapModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModelView.swift; sourceTree = "<group>"; };
 		B552DD70257856BF00374A5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B562DF8425E58BB5003DD83E /* EventFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFetcher.swift; sourceTree = "<group>"; };
+		B58232912610BC6100D043F2 /* MyEventsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsList.swift; sourceTree = "<group>"; };
 		B5916F7025E71C760086C479 /* ViewAddNewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAddNewEvent.swift; sourceTree = "<group>"; };
 		B5A7833925E4731800018767 /* DisplayEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayEventView.swift; sourceTree = "<group>"; };
 		B5FAE5C9258FFC1900AFDADE /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				B5389B782573D45400FA2404 /* ViewForAddingNewEvent.swift */,
 				B5916F7025E71C760086C479 /* ViewAddNewEvent.swift */,
 				B5A7833925E4731800018767 /* DisplayEventView.swift */,
+				B58232912610BC6100D043F2 /* MyEventsList.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				B52C4A8A25DDB04900F19C0C /* EventObject.swift in Sources */,
 				B552DD71257856BF00374A5D /* LoginViewController.swift in Sources */,
 				B52DE4C525DF1CF200C83BF3 /* AddNewEventViewModel.swift in Sources */,
+				B58232922610BC6100D043F2 /* MyEventsList.swift in Sources */,
 				B7D154A52584CD620070759B /* CalendarView.swift in Sources */,
 				B52E83D225B4575F00CC8F44 /* EventListViewModel.swift in Sources */,
 				B52D054825705B4000526B23 /* RegistrationView.swift in Sources */,

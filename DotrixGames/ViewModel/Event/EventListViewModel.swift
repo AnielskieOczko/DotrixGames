@@ -18,11 +18,30 @@ class EventListViewModel: ObservableObject {
     
     
     init() {
-        fetcher.getEvent { [weak self] (event) in
-            self?.model.append(event!)
-            //self?.model.eventList.append(event!)
+//        fetcher.getEvent { [weak self] (event) in
+//            self?.model.append(event!)
+//            //self?.model.eventList.append(event!)
+//        }
+        fetcher.getAllEvents2 { [weak self] (events) in
+            for e in events {
+                self?.model.append(e!)
+                print("RJ say: \(e!)")
+            }
         }
+        // fetcher.getAllEvents()
     }
+    
+    
+//    func getMyEvents() -> [Event] {
+//        
+//        let filteredEvents: [Event] = []
+//        ForEach (model.filter({ "\($0)".contains("RJ")) }) { event in
+//            
+//        }
+//        return filteredEvents
+//    }
+    
+    
     
 //    func fetchEventList() {
 //
@@ -71,19 +90,6 @@ class EventListViewModel: ObservableObject {
     func editEvent(event: Event) {
 //        model.editEvent()
     }
-    
-//    func createNewEvent(id: Int,
-//                        name: String,
-//                        type: String,
-//                        mapCoordinator: CLLocationCoordinate2D,
-//                        numberOfPlayers: Int,
-//                        desciption: String,
-//                        gameName: String,
-//                        organizators: String) -> Event {
-//        print(events.count)
-//        return model.createNewEvent(id: id, name: name, type: type, mapCoordinator: mapCoordinator, numberOfPlayers: numberOfPlayers, desciption: desciption, gameName: gameName, organizators: organizators)
-//    }
-    
 }
 
 

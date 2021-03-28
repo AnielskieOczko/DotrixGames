@@ -13,10 +13,7 @@ struct EventsList {
     
     
     var eventList: [Event] = []
-    
 
-    
-    
     mutating func addEvent(newEvent: Event) {
         eventList.append(newEvent)
     }

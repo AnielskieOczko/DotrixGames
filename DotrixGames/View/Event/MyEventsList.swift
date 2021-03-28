@@ -1,36 +1,29 @@
 //
-//  DisplayEvent.swift
+//  MyEventsList.swift
 //  DotrixGames
 //
-//  Created by Rafal on 21/02/2021.
+//  Created by Rafal on 28/03/2021.
 //  Copyright © 2021 RafalDX. All rights reserved.
 //
-//// https://blckbirds.com/post/how-to-navigate-between-views-in-swiftui-by-using-an-environmentobject/
 
+import Foundation
 import SwiftUI
-import Parse
 
-struct MainView: View {
+
+struct MyEventsView: View {
     
     //@State var showView = false
     
     @ObservedObject var viewModel: EventListViewModel
-    //@ObservedObject var viewModel: EventListViewModel
-//    @State var events = [
-//        Event(id: 1, name: "Dota LAN Event", numberOfPlayers: 100, description: "Test description Test description Test description Test description Test description Test description", gameName: "Dota", organizators: "Dotrix"),
-//        Event(id: 2, name: "Dota LAN Event", numberOfPlayers: 100, description: "Test description Test description Test description Test description Test description Test description", gameName: "Dota", organizators: "Dotrix"),
-//        Event(id: 3, name: "Dota LAN Event", numberOfPlayers: 100, description: "Test description Test description Test description Test description Test description Test description", gameName: "Dota", organizators: "Dotrix")]
     
-
-
     var body: some View {
 
             NavigationView {
                 VStack {
-                    HeaderView(viewModel: viewModel)
+                    HeaderViewMyEvents(viewModel: viewModel)
                     .zIndex(1)
-                    List(viewModel.model, id:\.id) { event in
-                        NavigationLink(destination: EventView(event: event, viewModel: viewModel)) {
+                    List((viewModel.model).filter({ "\($0.name!)".contains("Dotrix") }), id:\.id) { event in
+                        NavigationLink(destination: ViewForMyOwnEvents(event: event, viewModel: viewModel)) {
                             Text("Event: \(event.name!)")
                             Text("Type: \(event.type!)")
                         }
@@ -48,14 +41,14 @@ struct MainView: View {
     }
 }
 
-struct EventView: View {
+struct ViewForMyOwnEvents: View {
     @State var event: Event
     @State var viewModel: EventListViewModel
     
     var body: some View {
         
         VStack(spacing: 20) {
-            HeaderView(viewModel: viewModel)
+            //HeaderViewMyEvents(viewModel: viewModel)
 
             HStack(spacing: 100){
                 Image(systemName: "tv")
@@ -109,15 +102,27 @@ struct EventView: View {
                 .frame(width: 400, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 
             }
-            Button(action: {
-                // action to add user to event list
-            }, label: {
-                Text("Sign In")
-                    .buttonStyle(PlainButtonStyle())
-                    .font(.title)
-            })
-
-
+            
+            HStack(spacing: 50) {
+                Button(action: {
+                    // take me to edit event view
+                }, label: {
+                    Text("Edit")
+                        .buttonStyle(PlainButtonStyle())
+                        .font(.title)
+                })
+                
+                Divider()
+                
+                Button(action: {
+                    // remove event from event list
+                }, label: {
+                    Text("Remove")
+                        .buttonStyle(PlainButtonStyle())
+                        .font(.title)
+                })
+            }
+            
             Spacer(minLength: 0)
 
             
@@ -132,9 +137,7 @@ struct EventView: View {
     }
 }
 
-
-
-struct HeaderView: View {
+struct HeaderViewMyEvents: View {
     
     @State var viewModel: EventListViewModel
     @State var showAddNewEventView: Bool = false
@@ -146,7 +149,7 @@ struct HeaderView: View {
             .aspectRatio(contentMode: .fit)
             .frame(width: 40, height: 40)
 
-        Text("Event List")
+        Text("My Events (created by me)")
             .font(.headline)
             .fontWeight(.bold)
             .foregroundColor(.black)
@@ -154,7 +157,6 @@ struct HeaderView: View {
 
         Spacer(minLength:0)
 
-            
         NavigationLink(
             destination: AddNewEventView(viewModel: viewModel),
             isActive: $showAddNewEventView,
@@ -170,8 +172,7 @@ struct HeaderView: View {
 
                 })
             })
-
-
+            
         Button(action: {
             // search event
         },label: {
@@ -192,18 +193,8 @@ struct HeaderView: View {
     }
 }
 
-
-//struct DisplayMainView3: PreviewProvider {
-//    static var previews: some View {
-//        EventView(event: Event(name: "newEventTest", type: "unknown"),viewModel: EventListViewModel())
-//    }
-//}
-
-
-struct DisplayMainView: PreviewProvider {
+struct DisplayMainView2: PreviewProvider {
     static var previews: some View {
-        MainView(viewModel: EventListViewModel())
-        //EventView(event: Event(id: 1, name: "Dota LAN Event", numberOfPlayers: 100, description: "Test description Test description Test description Test description Test description Test description", gameName: "Dota", organizators: "Dotrix"))
+        MyEventsView(viewModel: EventListViewModel())
     }
 }
-

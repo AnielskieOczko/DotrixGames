@@ -8,18 +8,22 @@
 
 import SwiftUI
 import MapKit
+import Parse
 
 
 struct Event: Identifiable {
-    var id: Int
+    var id: String?
     
     var name: String?
     var type: String?
     var mapCoordinates: CLLocationCoordinate2D?
-    var numberOfPlayers: Int?
+    var numberOfPlayers: String?
     var description: String?
     var gameName: String?
     var organizators: String?
+    var date: Date?
+    var participants: [PFUser]?
+    var owner: PFUser?
     
     
 }
