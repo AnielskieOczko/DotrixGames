@@ -32,8 +32,10 @@ struct MainView: View {
                     List(viewModel.model, id:\.id) { event in
                         NavigationLink(destination: EventView(event: event, viewModel: viewModel)) {
                             Text("Event: \(event.name!)")
-                            Text("Type: \(event.type!)")
+                            //Text("Type: \(event.type!)")
+                            Text("\(event.owner)")
                         }
+                        .font(.footnote)
                 }
                     .onAppear(perform: {
                         print(viewModel.model)
@@ -69,10 +71,13 @@ struct EventView: View {
             Divider()
             
             VStack(alignment: .leading) {
-                
+                HStack (spacing: 20) {
+                    Text("OwnerID: ")
+                    Text(event.ownerId)
+                }
                 HStack (spacing: 20) {
                     Text("ID: ")
-                    Text(event.id!)
+                    Text(event.id!) // blad gdy po dodaniu ewentu od razu otwierasz okno ewentu, ID z serwera jeszcze sie nie zaciagnelo
                 }
                 HStack (spacing: 20) {
                     Text("Game Name: ")

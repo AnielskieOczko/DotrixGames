@@ -23,7 +23,8 @@ struct Event: Identifiable {
     var organizators: String?
     var date: Date?
     var participants: [PFUser]?
-    var owner: PFUser?
+    var owner: String
+    var ownerId: String
     
     
 }

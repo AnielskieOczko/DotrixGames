@@ -12,6 +12,7 @@ import Parse
 
 struct AddNewEventView: View {
     
+    @EnvironmentObject var loginManager: AuthorizaionManager
     
     @State var viewModel: EventListViewModel
     @State var name: String = ""
@@ -22,9 +23,12 @@ struct AddNewEventView: View {
     @State var organizators = ""
     //@State var date = ""
     @State  var participants: [PFUser] = []
+
     
     var body: some View { 
         VStack {
+            Text("\(loginManager.currentUser?.login ?? "niezalogowany")")
+            Text("\(loginManager.currentUser?.userId ?? "niezalogowany")")
             Form {
                 TextField("Name", text: $name)
                 TextField("Type", text: $type)
@@ -38,7 +42,7 @@ struct AddNewEventView: View {
             }
             
             Button(action: {
-                viewModel.addNewEvent(event: Event(name: name, type: type, numberOfPlayers: numberOfPlayers, description: description, gameName: gameName, organizators: organizators, participants: participants))
+                viewModel.addNewEvent(event: Event(name: name, type: type, numberOfPlayers: numberOfPlayers, description: description, gameName: gameName, organizators: organizators, participants: participants, owner: loginManager.currentUser?.login ?? "niezalogowany", ownerId: loginManager.currentUser?.userId ?? "niezalogowany"))
             }, label: {
                 Text("Submit")
             })

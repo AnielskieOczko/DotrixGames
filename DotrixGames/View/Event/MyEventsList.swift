@@ -13,7 +13,7 @@ import SwiftUI
 struct MyEventsView: View {
     
     //@State var showView = false
-    
+    @EnvironmentObject var loginManager: AuthorizaionManager
     @ObservedObject var viewModel: EventListViewModel
     
     var body: some View {
@@ -22,10 +22,11 @@ struct MyEventsView: View {
                 VStack {
                     HeaderViewMyEvents(viewModel: viewModel)
                     .zIndex(1)
-                    List((viewModel.model).filter({ "\($0.name!)".contains("Dotrix") }), id:\.id) { event in
+                    List((viewModel.model).filter({ "\($0.ownerId)".contains(loginManager.currentUser?.userId ?? "niezalogowany") }), id:\.id) { event in
                         NavigationLink(destination: ViewForMyOwnEvents(event: event, viewModel: viewModel)) {
                             Text("Event: \(event.name!)")
                             Text("Type: \(event.type!)")
+                            Text("\(event.ownerId)")
                         }
                 }
                     .onAppear(perform: {
@@ -44,6 +45,7 @@ struct MyEventsView: View {
 struct ViewForMyOwnEvents: View {
     @State var event: Event
     @State var viewModel: EventListViewModel
+    @State var editMode: Bool =  false
     
     var body: some View {
         
@@ -60,39 +62,74 @@ struct ViewForMyOwnEvents: View {
             }
             
             Divider()
-            
-            VStack(alignment: .leading) {
-                
-                HStack (spacing: 20) {
-                    Text("ID: ")
-                    Text(event.id!)
+            if !editMode {
+                VStack(alignment: .leading) {
+                    
+                    HStack (spacing: 20) {
+                        Text("ID: ")
+                        Text(event.id!)
+                    }
+                    HStack (spacing: 20) {
+                        Text("Game Name: ")
+                        Text(event.gameName!)
+                    }
+                    Divider()
+                    HStack (spacing: 20) {
+                        Text("Event Description: ")
+                        Text(event.description!)
+                            .offset(y: 0)
+                    }
+                    .padding(.bottom)
+                    Divider()
+                    HStack (spacing: 20) {
+                        Text("Max player number: ")
+                        Text(String(event.numberOfPlayers!))
+                            
+                    }
+                    Divider()
+                    HStack (spacing: 20) {
+                        Text("Organizator: ")
+                        Text(event.organizators!)
+                    }
+                    Divider()
+                    
                 }
-                HStack (spacing: 20) {
-                    Text("Game Name: ")
-                    Text(event.gameName!)
-                }
-                Divider()
-                HStack (spacing: 20) {
-                    Text("Event Description: ")
-                    Text(event.description!)
-                        .offset(y: 0)
-                }
-                .padding(.bottom)
-                Divider()
-                HStack (spacing: 20) {
-                    Text("Max player number: ")
-                    Text(String(event.numberOfPlayers!))
-                        
-                }
-                Divider()
-                HStack (spacing: 20) {
-                    Text("Organizator: ")
-                    Text(event.organizators!)
-                }
-                Divider()
-                
+                .padding()
             }
-            .padding()
+            else {
+                VStack(alignment: .leading) {
+                    
+                    HStack (spacing: 20) {
+                        Text("ID: ")
+                        Text(event.id!)
+                    }
+                    HStack (spacing: 20) {
+                        Text("Game Name: ")
+                        Text(event.gameName!)
+                    }
+                    Divider()
+                    HStack (spacing: 20) {
+                        Text("Event Description: ")
+                        Text(event.description!)
+                            .offset(y: 0)
+                    }
+                    .padding(.bottom)
+                    Divider()
+                    HStack (spacing: 20) {
+                        Text("Max player number: ")
+                        Text(String(event.numberOfPlayers!))
+                            
+                    }
+                    Divider()
+                    HStack (spacing: 20) {
+                        Text("Organizator: ")
+                        Text(event.organizators!)
+                    }
+                    Divider()
+                    
+                }
+                .padding()
+            }
             
             HStack {
                 VStack (alignment: .leading) {
@@ -138,7 +175,7 @@ struct ViewForMyOwnEvents: View {
 }
 
 struct HeaderViewMyEvents: View {
-    
+    @EnvironmentObject var loginManager: AuthorizaionManager
     @State var viewModel: EventListViewModel
     @State var showAddNewEventView: Bool = false
     
@@ -148,11 +185,12 @@ struct HeaderViewMyEvents: View {
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 40, height: 40)
-
-        Text("My Events (created by me)")
+            
+            //Text("\(loginManager.currentUser?.login ?? "niezalogowany")")
+            Text("\(loginManager.currentUser?.userId ?? "niezalogowany")")
             .font(.headline)
             .fontWeight(.bold)
-            .foregroundColor(.black)
+            //.foregroundColor(.black)
             .kerning(0.5)
 
         Spacer(minLength:0)

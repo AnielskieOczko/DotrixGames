@@ -9,6 +9,11 @@ struct MyUser {
     var login: String {
         return pfUser.username ?? ""
     }
+    
+    var userId: String {
+        return pfUser.objectId!
+    }
+    
     private let pfUser: PFUser
 
     init(pfUser: PFUser) {

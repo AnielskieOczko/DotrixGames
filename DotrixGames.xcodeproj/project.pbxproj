@@ -30,6 +30,7 @@
 		B552DD71257856BF00374A5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552DD70257856BF00374A5D /* LoginViewController.swift */; };
 		B562DF8525E58BB5003DD83E /* EventFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B562DF8425E58BB5003DD83E /* EventFetcher.swift */; };
 		B58232922610BC6100D043F2 /* MyEventsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58232912610BC6100D043F2 /* MyEventsList.swift */; };
+		B58CE41D261B7CA50066BCAD /* MyEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CE41C261B7CA50066BCAD /* MyEventsViewModel.swift */; };
 		B5916F7125E71C760086C479 /* ViewAddNewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5916F7025E71C760086C479 /* ViewAddNewEvent.swift */; };
 		B5A7833A25E4731800018767 /* DisplayEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7833925E4731800018767 /* DisplayEventView.swift */; };
 		B5FAE5CA258FFC1900AFDADE /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FAE5C9258FFC1900AFDADE /* SignUp.swift */; };
@@ -68,6 +69,7 @@
 		B552DD70257856BF00374A5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B562DF8425E58BB5003DD83E /* EventFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFetcher.swift; sourceTree = "<group>"; };
 		B58232912610BC6100D043F2 /* MyEventsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsList.swift; sourceTree = "<group>"; };
+		B58CE41C261B7CA50066BCAD /* MyEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsViewModel.swift; sourceTree = "<group>"; };
 		B5916F7025E71C760086C479 /* ViewAddNewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAddNewEvent.swift; sourceTree = "<group>"; };
 		B5A7833925E4731800018767 /* DisplayEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayEventView.swift; sourceTree = "<group>"; };
 		B5FAE5C9258FFC1900AFDADE /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				B52DE4C425DF1CF200C83BF3 /* AddNewEventViewModel.swift */,
 				B52E83D125B4575F00CC8F44 /* EventListViewModel.swift */,
+				B58CE41C261B7CA50066BCAD /* MyEventsViewModel.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				B562DF8525E58BB5003DD83E /* EventFetcher.swift in Sources */,
 				B5916F7125E71C760086C479 /* ViewAddNewEvent.swift in Sources */,
 				B5FAE5CA258FFC1900AFDADE /* SignUp.swift in Sources */,
+				B58CE41D261B7CA50066BCAD /* MyEventsViewModel.swift in Sources */,
 				B5389B812573DAAE00FA2404 /* LoginModel.swift in Sources */,
 				B52D8D612569827B004F5ED7 /* AppDelegate.swift in Sources */,
 				B5A7833A25E4731800018767 /* DisplayEventView.swift in Sources */,

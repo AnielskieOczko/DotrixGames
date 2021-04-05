@@ -31,6 +31,16 @@ class EventListViewModel: ObservableObject {
         // fetcher.getAllEvents()
     }
     
+    func getEventsByName(with name: String) {
+        self.model = []
+        fetcher.getAllEventsFilterByName(with: name) { [weak self] events in
+            for e in events {
+                self?.model.append(e!)
+                print("RJ say: \(e!)")
+            }
+        }
+    }
+    
     
 //    func getMyEvents() -> [Event] {
 //        

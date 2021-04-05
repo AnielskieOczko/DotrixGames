@@ -16,8 +16,8 @@ struct ContentView: View {
     //@ObservedObject var modelView =  EventListViewModel()
     @ViewBuilder var body: some View {
         
-//        if loginManager.isUserLoggedIn() {
-//            TabView {
+        if loginManager.isUserLoggedIn() {
+            TabView {
                 MenuView()
                 //MapDisplayView()
                 //createEvent(viewModel: modelView)
@@ -27,30 +27,38 @@ struct ContentView: View {
                 //LoginView()
                 //registrationForm()
             }
-            //.edgesIgnoringSafeArea(.all)
-            //.statusBar(hidden: true)
+            .edgesIgnoringSafeArea(.all)
+            .statusBar(hidden: true)
         }
-//        else {
-//            LoginView()
-//                    .environmentObject(AuthorizaionManager.shared)
-//                    .edgesIgnoringSafeArea(.all)
-//                    .statusBar(hidden: true)
-//        }
-//    }
-//}
+        else {
+            LoginView()
+                    .environmentObject(AuthorizaionManager.shared)
+                    .edgesIgnoringSafeArea(.all)
+                    .statusBar(hidden: true)
+        }
+    }
+}
 
 
 struct MenuView: View {
     //@State var modelView: EventListViewModel
+    @State var modelView = EventListViewModel()
     
     var body: some View {
         VStack {
             //DisplayEventList(viewModel: modelView)
-            MainView(viewModel: EventListViewModel())
+            MainView(viewModel: modelView)
         }
         .tabItem {
             Text("Menu")
             Image(systemName: "book")
+        }
+        VStack {
+            MyEventsView(viewModel: modelView)
+        }
+        .tabItem {
+            Text("MyEvents")
+            Image(systemName: "person")
         }
     }
 }
