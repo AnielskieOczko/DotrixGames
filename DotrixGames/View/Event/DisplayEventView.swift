@@ -54,66 +54,101 @@ struct EventView: View {
     @State var event: Event
     @State var viewModel: EventListViewModel
     
+    let dateFormatter = DateFormatter()
+    
+    
     var body: some View {
         
         VStack(spacing: 20) {
-            HeaderView(viewModel: viewModel)
-
-            HStack(spacing: 100){
-                Image(systemName: "tv")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 100, height: 100)
-                Text("\(event.name!)")
-                    .font(.title)
+            VStack {
+                HStack (spacing: 20) {
+                    Text("Name: ")
+                    Text(event.name!)
+                }
             }
-            
-            Divider()
-            
             VStack(alignment: .leading) {
-                HStack (spacing: 20) {
-                    Text("OwnerID: ")
-                    Text(event.ownerId)
+                
+                Group {
+                    HStack (spacing: 20) {
+                        Text("OwnerID: ")
+                        Text(event.ownerId)
+                    }
+                    HStack (spacing: 20) {
+                        Text("ID: ")
+                        Text(event.id!) // blad gdy po dodaniu ewentu od razu otwierasz okno ewentu, ID z serwera jeszcze sie nie zaciagnelo
+                    }
+                    HStack (spacing: 20) {
+                        Text("type: ")
+                        Text(event.type!)
+                    }
+    //                Divider()
+    //                HStack (spacing: 20) {
+    //                    Text("mapCoordinates: ")
+    //                    Text(event.mapCoordinates!)
+    //                        .offset(y: 0)
+    //                }
+    //                .padding(.bottom)
+                    Divider()
+                    HStack (spacing: 20) {
+                        Text("Number of players: ")
+                        Text(String(event.numberOfPlayers!))
+                            
+                    }
+                    Divider()
+                    
+                    HStack (spacing: 20) {
+                        Text("Description: ")
+                        Text(event.description!)
+                    }
+                    Divider()
+                    
+                    HStack (spacing: 20) {
+                        Text("GameName: ")
+                        Text(event.gameName!)
+                    }
+                    Divider()
                 }
-                HStack (spacing: 20) {
-                    Text("ID: ")
-                    Text(event.id!) // blad gdy po dodaniu ewentu od razu otwierasz okno ewentu, ID z serwera jeszcze sie nie zaciagnelo
-                }
-                HStack (spacing: 20) {
-                    Text("Game Name: ")
-                    Text(event.gameName!)
-                }
+
                 Divider()
+
+                
                 HStack (spacing: 20) {
-                    Text("Event Description: ")
-                    Text(event.description!)
-                        .offset(y: 0)
-                }
-                .padding(.bottom)
-                Divider()
-                HStack (spacing: 20) {
-                    Text("Max player number: ")
-                    Text(String(event.numberOfPlayers!))
-                        
-                }
-                Divider()
-                HStack (spacing: 20) {
-                    Text("Organizator: ")
+                    Text("Organizators")
                     Text(event.organizators!)
                 }
                 Divider()
                 
-            }
-            .padding()
-            
-            HStack {
-                VStack (alignment: .leading) {
-                    Text("Adress: ")
-                    MapDisplayView()
+//                HStack (spacing: 20) {
+//
+//                    Text("Date")
+//                    Text(dateFormatter.string(from: event.date!) )
+//                }
+//                Divider()
+                
+//                HStack (spacing: 20) {
+//                    Text("Participants")
+//                    Text(event.participants!)
+//                }
+//                Divider()
+                
+                HStack (spacing: 20) {
+                    Text("Owner")
+                    Text(event.owner)
                 }
-                .frame(width: 400, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Divider()
+                
                 
             }
+            .padding()
+
+//            HStack {
+//                VStack (alignment: .leading) {
+//                    Text("Adress: ")
+//                    MapDisplayView()
+//                }
+//                .frame(width: 400, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+//
+//            }
             Button(action: {
                 // action to add user to event list
             }, label: {
@@ -121,12 +156,7 @@ struct EventView: View {
                     .buttonStyle(PlainButtonStyle())
                     .font(.title)
             })
-
-
             Spacer(minLength: 0)
-
-            
-            
             .font(.body)
 
         .padding()
@@ -166,7 +196,7 @@ struct HeaderView: View {
             label: {
                 Button(action: {
                     // here function to open view for adding new event
-                    showAddNewEventView = true
+                    showAddNewEventView.toggle()
                 },label: {
                     Image(systemName: "plus")
                         .font(.largeTitle)

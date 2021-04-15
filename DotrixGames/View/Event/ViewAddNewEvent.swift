@@ -12,6 +12,7 @@ import Parse
 
 struct AddNewEventView: View {
     
+    @Environment(\.presentationMode) var presentation
     @EnvironmentObject var loginManager: AuthorizaionManager
     
     @State var viewModel: EventListViewModel
@@ -43,6 +44,7 @@ struct AddNewEventView: View {
             
             Button(action: {
                 viewModel.addNewEvent(event: Event(name: name, type: type, numberOfPlayers: numberOfPlayers, description: description, gameName: gameName, organizators: organizators, participants: participants, owner: loginManager.currentUser?.login ?? "niezalogowany", ownerId: loginManager.currentUser?.userId ?? "niezalogowany"))
+                presentation.wrappedValue.dismiss()
             }, label: {
                 Text("Submit")
             })

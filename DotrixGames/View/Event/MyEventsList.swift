@@ -22,7 +22,14 @@ struct MyEventsView: View {
                 VStack {
                     HeaderViewMyEvents(viewModel: viewModel)
                     .zIndex(1)
-                    List((viewModel.model).filter({ "\($0.ownerId)".contains(loginManager.currentUser?.userId ?? "niezalogowany") }), id:\.id) { event in
+                    // TODO: Change filter, to pull data using query with criteria (event owner ID)
+//                    List((viewModel.model).filter({ "\($0.ownerId)".contains(loginManager.currentUser?.userId ?? "niezalogowany") }), id:\.id) { event in
+//                        NavigationLink(destination: ViewForMyOwnEvents(event: event, viewModel: viewModel)) {
+//                            Text("Event: \(event.name!)")
+//                            Text("Type: \(event.type!)")
+//                            Text("\(event.ownerId)")
+//                        }
+                    List((viewModel.myEvents), id:\.id) { event in
                         NavigationLink(destination: ViewForMyOwnEvents(event: event, viewModel: viewModel)) {
                             Text("Event: \(event.name!)")
                             Text("Type: \(event.type!)")
@@ -30,13 +37,13 @@ struct MyEventsView: View {
                         }
                 }
                     .onAppear(perform: {
-                        print(viewModel.model)
+                        print("RJ say: \(viewModel.myEvents)")
                     })
                 .buttonStyle(PlainButtonStyle())
                 .listStyle(GroupedListStyle())
                 }
                 
-            }.navigationViewStyle(StackNavigationViewStyle())
+            }.padding().navigationViewStyle(StackNavigationViewStyle())
 
         
     }
@@ -46,6 +53,7 @@ struct ViewForMyOwnEvents: View {
     @State var event: Event
     @State var viewModel: EventListViewModel
     @State var editMode: Bool =  false
+    @State var text: String  = ""
     
     var body: some View {
         
@@ -62,92 +70,61 @@ struct ViewForMyOwnEvents: View {
             }
             
             Divider()
-            if !editMode {
-                VStack(alignment: .leading) {
-                    
-                    HStack (spacing: 20) {
-                        Text("ID: ")
-                        Text(event.id!)
-                    }
-                    HStack (spacing: 20) {
-                        Text("Game Name: ")
-                        Text(event.gameName!)
-                    }
-                    Divider()
-                    HStack (spacing: 20) {
-                        Text("Event Description: ")
-                        Text(event.description!)
-                            .offset(y: 0)
-                    }
-                    .padding(.bottom)
-                    Divider()
-                    HStack (spacing: 20) {
-                        Text("Max player number: ")
-                        Text(String(event.numberOfPlayers!))
-                            
-                    }
-                    Divider()
-                    HStack (spacing: 20) {
-                        Text("Organizator: ")
-                        Text(event.organizators!)
-                    }
-                    Divider()
-                    
+
+            VStack(alignment: .leading) {
+                
+                HStack (spacing: 20) {
+                    Text("ID: ")
+                    Text(event.id!)
                 }
-                .padding()
-            }
-            else {
-                VStack(alignment: .leading) {
-                    
-                    HStack (spacing: 20) {
-                        Text("ID: ")
-                        Text(event.id!)
-                    }
-                    HStack (spacing: 20) {
-                        Text("Game Name: ")
-                        Text(event.gameName!)
-                    }
-                    Divider()
-                    HStack (spacing: 20) {
-                        Text("Event Description: ")
-                        Text(event.description!)
-                            .offset(y: 0)
-                    }
-                    .padding(.bottom)
-                    Divider()
-                    HStack (spacing: 20) {
-                        Text("Max player number: ")
-                        Text(String(event.numberOfPlayers!))
-                            
-                    }
-                    Divider()
-                    HStack (spacing: 20) {
-                        Text("Organizator: ")
-                        Text(event.organizators!)
-                    }
-                    Divider()
-                    
+                HStack (spacing: 20) {
+                    Text("Game Name: ")
+                    Text(event.gameName!)
                 }
-                .padding()
-            }
-            
-            HStack {
-                VStack (alignment: .leading) {
-                    Text("Adress: ")
-                    MapDisplayView()
+                Divider()
+                HStack (spacing: 20) {
+                    Text("Event Description: ")
+                    Text(event.description!)
+                        .offset(y: 0)
                 }
-                .frame(width: 400, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .padding(.bottom)
+                Divider()
+                HStack (spacing: 20) {
+                    Text("Max player number: ")
+                    Text(String(event.numberOfPlayers!))
+                        
+                }
+                Divider()
+                HStack (spacing: 20) {
+                    Text("Organizator: ")
+                    Text(event.organizators!)
+                }
+                Divider()
                 
             }
-            
+            .padding()
             HStack(spacing: 50) {
-                Button(action: {
-                    // take me to edit event view
-                }, label: {
-                    Text("Edit")
-                        .buttonStyle(PlainButtonStyle())
-                        .font(.title)
-                })
+//                Button(action: {
+//                    editMode.toggle()
+//                    // take me to edit event view
+//                }, label: {
+//                    Text("Edit")
+//                        .buttonStyle(PlainButtonStyle())
+//                        .font(.title)
+//                })
+                NavigationLink(
+                    destination: EditEvent(event: event, viewModel: viewModel),
+                    isActive: $editMode,
+                    label: {
+                        Button(action: {
+                            // here function to open view for adding new event
+                            editMode.toggle()
+                        },label: {
+                            Text("Edit")
+                                .buttonStyle(PlainButtonStyle())
+                                .font(.title)
+                        })
+                    })
                 
                 Divider()
                 
@@ -161,9 +138,6 @@ struct ViewForMyOwnEvents: View {
             }
             
             Spacer(minLength: 0)
-
-            
-            
             .font(.body)
 
         .padding()

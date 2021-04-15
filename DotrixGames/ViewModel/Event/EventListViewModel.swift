@@ -12,7 +12,9 @@ import MapKit
 
 class EventListViewModel: ObservableObject {
 
+    @EnvironmentObject var loginManager: AuthorizaionManager
     @Published var model: [Event] = []
+    @Published var myEvents: [Event] = []
     //@Published var model: EventsList = EventsList()
     let fetcher = EventFetcher()
     
@@ -28,18 +30,38 @@ class EventListViewModel: ObservableObject {
                 print("RJ say: \(e!)")
             }
         }
-        // fetcher.getAllEvents()
-    }
-    
-    func getEventsByName(with name: String) {
-        self.model = []
-        fetcher.getAllEventsFilterByName(with: name) { [weak self] events in
+        
+        // get all events created by current user
+        
+        let userID: String = "OVltj7nWHi" // TODO: get somehow currently logged userID
+        fetcher.getAllEventsFilteredEventOwnerID(with: userID) { [weak self] (events) in
             for e in events {
-                self?.model.append(e!)
+                self?.myEvents.append(e!)
                 print("RJ say: \(e!)")
             }
         }
+        // fetcher.getAllEvents()
     }
+    
+    func editEvent(event: Event) {
+        fetcher.editEvent(event: event)
+        print("RJ say: event \(event.id!) updated")
+    }
+    
+    
+    
+    
+    
+//
+//    func getEventsByName(with name: String) {
+//        self.myEvents = []
+//        fetcher.getAllEventsFilterByName(with: name) { [weak self] (events) in
+//            for e in events {
+//                self?.model.append(e!)
+//                print("RJ say: \(e!)")
+//            }
+//        }
+//    }
     
     
 //    func getMyEvents() -> [Event] {
@@ -97,9 +119,6 @@ class EventListViewModel: ObservableObject {
 //        model.removeEvent(event: event)
     }
     
-    func editEvent(event: Event) {
-//        model.editEvent()
-    }
 }
 
 

@@ -19,6 +19,7 @@ struct ContentView: View {
         if loginManager.isUserLoggedIn() {
             TabView {
                 MenuView()
+                    .environmentObject(AuthorizaionManager.shared)
                 //MapDisplayView()
                 //createEvent(viewModel: modelView)
                 //MainView()

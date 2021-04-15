@@ -11,20 +11,20 @@ import SwiftUI
 import MapKit
 
 class MyOwnEventListViewModel: ObservableObject {
-
+    
     @Published var model: [Event] = []
     //@Published var model: EventsList = EventsList()
     let fetcher = EventFetcher()
     
     
-    init(name: String) {
-        fetcher.getAllEventsFilterByName(with: name) { [weak self] events in
-            for e in events {
-                self?.model.append(e!)
-                print("RJ say: \(e!)")
-            }
-        }
-    }
+//    init(name: String) {
+//        fetcher.getAllEventsFilterByName(with: name) { [weak self] events in
+//            for e in events {
+//                self?.model.append(e!)
+//                print("RJ say: \(e!)")
+//            }
+//        }
+//    }
     
     
 }

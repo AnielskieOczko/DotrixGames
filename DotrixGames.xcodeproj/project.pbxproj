@@ -30,6 +30,7 @@
 		B552DD71257856BF00374A5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552DD70257856BF00374A5D /* LoginViewController.swift */; };
 		B562DF8525E58BB5003DD83E /* EventFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B562DF8425E58BB5003DD83E /* EventFetcher.swift */; };
 		B58232922610BC6100D043F2 /* MyEventsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58232912610BC6100D043F2 /* MyEventsList.swift */; };
+		B58ACDA0262785820072404F /* EditEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58ACD9F262785820072404F /* EditEvent.swift */; };
 		B58CE41D261B7CA50066BCAD /* MyEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CE41C261B7CA50066BCAD /* MyEventsViewModel.swift */; };
 		B5916F7125E71C760086C479 /* ViewAddNewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5916F7025E71C760086C479 /* ViewAddNewEvent.swift */; };
 		B5A7833A25E4731800018767 /* DisplayEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7833925E4731800018767 /* DisplayEventView.swift */; };
@@ -69,6 +70,7 @@
 		B552DD70257856BF00374A5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B562DF8425E58BB5003DD83E /* EventFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFetcher.swift; sourceTree = "<group>"; };
 		B58232912610BC6100D043F2 /* MyEventsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsList.swift; sourceTree = "<group>"; };
+		B58ACD9F262785820072404F /* EditEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEvent.swift; sourceTree = "<group>"; };
 		B58CE41C261B7CA50066BCAD /* MyEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsViewModel.swift; sourceTree = "<group>"; };
 		B5916F7025E71C760086C479 /* ViewAddNewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAddNewEvent.swift; sourceTree = "<group>"; };
 		B5A7833925E4731800018767 /* DisplayEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayEventView.swift; sourceTree = "<group>"; };
@@ -112,7 +114,6 @@
 		B52C4A8F25DDB8D100F19C0C /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				B52E83CF25B4415900CC8F44 /* EventListModel.swift */,
 				B52C4A8925DDB04900F19C0C /* EventObject.swift */,
 				B52DE4C225DF1C5500C83BF3 /* ModelAddNewEventView.swift */,
 			);
@@ -124,7 +125,6 @@
 			children = (
 				B52DE4C425DF1CF200C83BF3 /* AddNewEventViewModel.swift */,
 				B52E83D125B4575F00CC8F44 /* EventListViewModel.swift */,
-				B58CE41C261B7CA50066BCAD /* MyEventsViewModel.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -132,10 +132,10 @@
 		B52C4A9125DDBA4400F19C0C /* Event */ = {
 			isa = PBXGroup;
 			children = (
-				B5389B782573D45400FA2404 /* ViewForAddingNewEvent.swift */,
 				B5916F7025E71C760086C479 /* ViewAddNewEvent.swift */,
 				B5A7833925E4731800018767 /* DisplayEventView.swift */,
 				B58232912610BC6100D043F2 /* MyEventsList.swift */,
+				B58ACD9F262785820072404F /* EditEvent.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -218,6 +218,9 @@
 		B573A40A25E706210030FC41 /* notInUse */ = {
 			isa = PBXGroup;
 			children = (
+				B52E83CF25B4415900CC8F44 /* EventListModel.swift */,
+				B58CE41C261B7CA50066BCAD /* MyEventsViewModel.swift */,
+				B5389B782573D45400FA2404 /* ViewForAddingNewEvent.swift */,
 				B52E83D325B4667300CC8F44 /* ViewForShowingEventList.swift */,
 				B52C4A8B25DDB47400F19C0C /* testView.swift */,
 				B52C4A8D25DDB6C700F19C0C /* EventStorage.swift */,
@@ -404,6 +407,7 @@
 				B52C4A8E25DDB6C700F19C0C /* EventStorage.swift in Sources */,
 				B52D8D632569827B004F5ED7 /* SceneDelegate.swift in Sources */,
 				B7D154AC2584CFD30070759B /* AuthorizaionManager.swift in Sources */,
+				B58ACDA0262785820072404F /* EditEvent.swift in Sources */,
 				B5389B7F2573D79F00FA2404 /* MapView.swift in Sources */,
 				B52DE4C325DF1C5500C83BF3 /* ModelAddNewEventView.swift in Sources */,
 				B52C4A8C25DDB47400F19C0C /* testView.swift in Sources */,

@@ -10,8 +10,8 @@ struct LoginView: View {
     @State var signUpEmail = ""
     @State var signUpPassword = ""
     @State var signUpPasswordConfirmation = ""
-    @State var loginUserName = ""
-    @State var loginPassword = ""
+    @State var loginUserName = "RafalTest@wp.pl"
+    @State var loginPassword = "test"
 
     
     //@ObservedObject var UserRegistrationData = registrationData()

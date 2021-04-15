@@ -52,21 +52,41 @@ class EventFetcher {
             }
         }
     }
-    
-    func editEvent(with id: String = "") {
+//    @State var name: String = ""
+//    @State var type: String = ""
+//    @State var numberOfPlayers: String = ""
+//    @State var description = ""
+//    @State var gameName = ""
+//    @State var organizators = ""
+    func editEvent(event: Event) {
         let query = PFQuery(className: "Event")
-        query.getObjectInBackground(withId: id) {(parseObject, error) -> Void in
+        query.getObjectInBackground(withId: event.id!) {(parseObject, error) -> Void in
             if error == nil, let parseObject = parseObject {
-                parseObject["name"] = ""
+                parseObject["name"] = event.name!
+                parseObject["type"] = event.type!
+                parseObject["numberOfPlayers"] = event.numberOfPlayers
+                parseObject["description"] = event.description
+                parseObject["gameName"] = event.gameName
+                parseObject["organizators"] = event.organizators
                 parseObject.saveInBackground()
+                parseObject.fetchInBackground()
+                print("RJ say: event updated")
             }
         }
     }
     
     func addEvent(from event: Event) {
         let query = PFObject(className:"Event")
+        
         query["name"] = event.name!
         query["type"] = event.type!
+        //query["mapCoordinates"] = CLLocationCoordinate2DMake(0, 0) // to change for now no possibility to add coordinates. CL CORD must be converted to PFGEOPOINT
+        query["numberOfPlayers"] = event.numberOfPlayers!
+        query["description"] = event.description!
+        query["gameName"] = event.gameName!
+        query["organizators"] = event.organizators!
+        query["date"] = Date()
+        //query["participants"] = event.participants!
         query["owner"] = event.owner
         query["ownerId"] = event.ownerId
         
@@ -83,9 +103,11 @@ class EventFetcher {
     }
     
     
-    func getAllEventsFilterByName(with name: String, completionBlock: @escaping ([Event?]) -> Void) {
+
+    
+    func getAllEventsFilteredEventOwnerID(with ownerID: String, completionBlock: @escaping ([Event?]) -> Void) {
         let query = PFQuery(className: "Event")
-        query.whereKey("name", hasPrefix: name)
+        query.whereKey("ownerId", hasPrefix: ownerID)
         
         query.findObjectsInBackground { (events, error) in
             if error == nil {
