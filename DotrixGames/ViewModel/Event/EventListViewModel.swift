@@ -12,7 +12,8 @@ import MapKit
 
 class EventListViewModel: ObservableObject {
 
-    @EnvironmentObject var loginManager: AuthorizaionManager
+    var loginManager: AuthorizaionManager = AuthorizaionManager.shared
+    
     @Published var model: [Event] = []
     @Published var myEvents: [Event] = []
     //@Published var model: EventsList = EventsList()
@@ -27,98 +28,100 @@ class EventListViewModel: ObservableObject {
         fetcher.getAllEvents2 { [weak self] (events) in
             for e in events {
                 self?.model.append(e!)
-                print("RJ say: \(e!)")
+                //print("RJ say: \(e!)")
             }
         }
         
         // get all events created by current user
-        
-        let userID: String = "OVltj7nWHi" // TODO: get somehow currently logged userID
+        let userID: String = self.loginManager.currentUser?.userId ?? "niezalogowany"
         fetcher.getAllEventsFilteredEventOwnerID(with: userID) { [weak self] (events) in
             for e in events {
                 self?.myEvents.append(e!)
-                print("RJ say: \(e!)")
+                //print("RJ say: \(e!)")
             }
         }
-        // fetcher.getAllEvents()
-    }
-    
-    func editEvent(event: Event) {
-        fetcher.editEvent(event: event)
-        print("RJ say: event \(event.id!) updated")
     }
     
     
-    
-    
-    
-//
-//    func getEventsByName(with name: String) {
-//        self.myEvents = []
-//        fetcher.getAllEventsFilterByName(with: name) { [weak self] (events) in
-//            for e in events {
-//                self?.model.append(e!)
-//                print("RJ say: \(e!)")
-//            }
-//        }
-//    }
-    
-    
-//    func getMyEvents() -> [Event] {
-//        
-//        let filteredEvents: [Event] = []
-//        ForEach (model.filter({ "\($0)".contains("RJ")) }) { event in
-//            
-//        }
-//        return filteredEvents
-//    }
-    
-    
-    
-//    func fetchEventList() {
-//
-//        let testEvent1 = Event(id: 1,
-//                                          name: "test name1",
-//                                          type: "Casaul",
-//                                          mapCoordinates: CLLocationCoordinate2D(latitude: 0.00, longitude: 0.00),
-//                                          numberOfPlayers: 1,
-//                                          description: "test description1",
-//                                          gameName: "Szachy",
-//                                          organizators: "test organizer1")
-//        let testEvent2 = Event(id: 2,
-//                                          name: "test name2",
-//                                          type: "Tournament",
-//                                          mapCoordinates: CLLocationCoordinate2D(latitude: 0.00, longitude: 0.00),
-//                                          numberOfPlayers: 1,
-//                                          description: "test description2",
-//                                          gameName: "Szachy",
-//                                          organizators: "test organizer2")
-//
-//
-//
-//        fetcher.getEvent { [weak self] (event) in
-//            self?.model.eventList.append(event!)
-//        }
-//
-//    }
-    
-//    // MARK: Access to the model
-//    var events: [Event] {
-////        model.getEventList()
-//    }
-//
     // MARK: Intent(s)
     func addNewEvent(event: Event) {
-        model.append(event)
-        fetcher.addEvent(from: event)
-//        model.addEvent(newEvent: event)
         
+        fetcher.addEvent(from: event) { [weak self] (eventId) in
+            guard let eventId = eventId else {
+                return
+            }
+            var event = event
+            event.changeId(id: eventId)
+            print(self!.loginManager.currentUser?.userId ?? "niezalogowany")
+            let userID: String? = self?.loginManager.currentUser?.userId
+            self?.model.append(event)
+            if (event.ownerId == userID) {
+                self?.myEvents.append(event)
+            }
+        }
     }
     
-    func removeEvent(event: Event) {
-//        model.removeEvent(event: event)
+    func editEvent(event: Event, name: String?, type: String?, numberOfPlayers: String?, description: String?, gameName: String?, organizators: String?) {
+        
+        // update event item on server
+        fetcher.editEvent(event: event,
+                          name: name!,
+                          type: type!,
+                          numberOfPlayers: numberOfPlayers!,
+                          description: description!,
+                          gameName: gameName!,
+                          organizators: organizators!)
+        
+        // update event item localy (avoid fetching data)
+        // TODO: bad approach but how to get list itemn index from view to send it here
+        var index: Int = 0
+        for e in self.myEvents {
+            if e.id == event.id! {
+                self.myEvents[index].name = name!
+                self.myEvents[index].type = type!
+                self.myEvents[index].numberOfPlayers = numberOfPlayers!
+                self.myEvents[index].description = description!
+                self.myEvents[index].gameName = gameName!
+                self.myEvents[index].organizators = organizators!
+            }
+            index += 1
+        }
     }
     
+    func deleteEvent(id: String) {
+
+        fetcher.deleteEvent(with: id)
+        print(self.myEvents.count)
+        
+        // TODO: bad approach but how to get list itemn index from view to send it here
+        var index: Int = 0
+        for e in self.myEvents {
+            if e.id == id {
+                self.myEvents.remove(at: index)
+            }
+            index += 1
+        }
+        
+        index = 0
+        for e in self.model {
+            if e.id == id {
+                self.model.remove(at: index)
+            }
+            index += 1
+        }
+    }
+    
+    
+    func converDateToString(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        
+        let eventDateAsString: String = dateFormatter.string(from: date)
+        
+        return eventDateAsString
+    }
+    
+
 }
 
 

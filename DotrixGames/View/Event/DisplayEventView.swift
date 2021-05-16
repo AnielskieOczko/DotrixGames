@@ -9,19 +9,13 @@
 
 import SwiftUI
 import Parse
+import Foundation
 
 struct MainView: View {
     
     //@State var showView = false
     
     @ObservedObject var viewModel: EventListViewModel
-    //@ObservedObject var viewModel: EventListViewModel
-//    @State var events = [
-//        Event(id: 1, name: "Dota LAN Event", numberOfPlayers: 100, description: "Test description Test description Test description Test description Test description Test description", gameName: "Dota", organizators: "Dotrix"),
-//        Event(id: 2, name: "Dota LAN Event", numberOfPlayers: 100, description: "Test description Test description Test description Test description Test description Test description", gameName: "Dota", organizators: "Dotrix"),
-//        Event(id: 3, name: "Dota LAN Event", numberOfPlayers: 100, description: "Test description Test description Test description Test description Test description Test description", gameName: "Dota", organizators: "Dotrix")]
-    
-
 
     var body: some View {
 
@@ -31,14 +25,15 @@ struct MainView: View {
                     .zIndex(1)
                     List(viewModel.model, id:\.id) { event in
                         NavigationLink(destination: EventView(event: event, viewModel: viewModel)) {
-                            Text("Event: \(event.name!)")
-                            //Text("Type: \(event.type!)")
-                            Text("\(event.owner)")
+                            SingleLineInListView(event: event)
+//                            Text("Event: \(event.name!)")
+//                            //Text("Type: \(event.type!)")
+//                            Text("\(event.owner)")
                         }
                         .font(.footnote)
                 }
                     .onAppear(perform: {
-                        print(viewModel.model)
+                        //print(viewModel.model)
                     })
                 .buttonStyle(PlainButtonStyle())
                 .listStyle(GroupedListStyle())
@@ -50,105 +45,83 @@ struct MainView: View {
     }
 }
 
+
+
 struct EventView: View {
     @State var event: Event
     @State var viewModel: EventListViewModel
-    
-    let dateFormatter = DateFormatter()
-    
+    @State var returnTxt: String = ""
+
     
     var body: some View {
         
         VStack(spacing: 20) {
-            VStack {
-                HStack (spacing: 20) {
-                    Text("Name: ")
-                    Text(event.name!)
-                }
-            }
+            rowView(labelText: "Name", valueText: event.name)
+                .font(.system(size: 20))
+            
+
             VStack(alignment: .leading) {
                 
+                rowView(labelText: "Owner Id: ", valueText: event.ownerId)
+                rowView(labelText: "Event Id: ", valueText: event.id)
+
                 Group {
-                    HStack (spacing: 20) {
-                        Text("OwnerID: ")
-                        Text(event.ownerId)
-                    }
-                    HStack (spacing: 20) {
-                        Text("ID: ")
-                        Text(event.id!) // blad gdy po dodaniu ewentu od razu otwierasz okno ewentu, ID z serwera jeszcze sie nie zaciagnelo
-                    }
-                    HStack (spacing: 20) {
-                        Text("type: ")
-                        Text(event.type!)
-                    }
-    //                Divider()
-    //                HStack (spacing: 20) {
-    //                    Text("mapCoordinates: ")
-    //                    Text(event.mapCoordinates!)
-    //                        .offset(y: 0)
-    //                }
-    //                .padding(.bottom)
+                    rowView(labelText: "Type: ", valueText: event.type)
+
+
                     Divider()
-                    HStack (spacing: 20) {
-                        Text("Number of players: ")
-                        Text(String(event.numberOfPlayers!))
-                            
-                    }
+                    
+                    rowView(labelText: "Players  signed in: ", valueText: "1 / \(event.numberOfPlayers!)")
                     Divider()
                     
                     HStack (spacing: 20) {
                         Text("Description: ")
-                        Text(event.description!)
-                    }
-                    Divider()
+                        MultiLineTF(txt: event.description!, editeEnabled: false, returnTxt: $returnTxt)
+                            .border(Color.black.opacity(0.5), width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+                    }.frame(maxWidth: .infinity, minHeight:   100, maxHeight: .infinity)
+                    
+                    //Divider()
                     
                     HStack (spacing: 20) {
                         Text("GameName: ")
                         Text(event.gameName!)
                     }
-                    Divider()
                 }
 
                 Divider()
-
                 
+                HStack (spacing: 20) {
+
+                    Text("Start date")
+                    Text(viewModel.converDateToString(date: event.startDate!))
+                }
+                
+                HStack (spacing: 20) {
+
+                    Text("End date")
+                    Text(viewModel.converDateToString(date: event.startDate!))
+                }
+                
+                Divider()
+                
+
                 HStack (spacing: 20) {
                     Text("Organizators")
                     Text(event.organizators!)
                 }
-                Divider()
-                
-//                HStack (spacing: 20) {
-//
-//                    Text("Date")
-//                    Text(dateFormatter.string(from: event.date!) )
-//                }
-//                Divider()
-                
-//                HStack (spacing: 20) {
-//                    Text("Participants")
-//                    Text(event.participants!)
-//                }
-//                Divider()
                 
                 HStack (spacing: 20) {
                     Text("Owner")
                     Text(event.owner)
                 }
+                
+
                 Divider()
                 
                 
             }
             .padding()
 
-//            HStack {
-//                VStack (alignment: .leading) {
-//                    Text("Adress: ")
-//                    MapDisplayView()
-//                }
-//                .frame(width: 400, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-//
-//            }
             Button(action: {
                 // action to add user to event list
             }, label: {
@@ -163,6 +136,21 @@ struct EventView: View {
         Text("Event added: 1 hour ago")
         .font(.caption)
         .foregroundColor(.gray)
+        }
+    }
+}
+
+struct rowView: View {
+    
+    var labelText: String
+    @State var valueText: String?
+    
+    var body: some View {
+        HStack (spacing: 20) {
+            Text(labelText)
+                .fontWeight(.bold)
+            Text(valueText!)
+                .fontWeight(.bold)
         }
     }
 }
@@ -231,6 +219,58 @@ struct HeaderView: View {
 //struct DisplayMainView3: PreviewProvider {
 //    static var previews: some View {
 //        EventView(event: Event(name: "newEventTest", type: "unknown"),viewModel: EventListViewModel())
+//    }
+//}
+struct SingleLineInListView: View {
+    
+    @State var event: Event
+    
+    var body: some View {
+        VStack {
+            HStack(spacing:20) {
+                Image(systemName: "moon")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 40, height: 40)
+                VStack {
+                    Text(event.name!)
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .kerning(0.5)
+                }
+                .padding(.leading)
+                
+                Spacer(minLength:0)
+                Text(event.type!)
+                    .fontWeight(.heavy)
+                    .kerning(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.red)
+
+            }
+            .padding()
+
+            
+            HStack(spacing: 20) {
+                Spacer(minLength: 0)
+                Text("created 1 hour ago")
+                    .foregroundColor(.gray)
+                    .padding(.trailing)
+                
+            }
+            .padding(.leading)
+        }
+        
+
+
+
+        
+    }
+}
+//struct DisplaySingleLineView: PreviewProvider {
+//    static var previews: some View {
+//        singleLineInListView(event: Event(id: "1", name: "Dota day", type: "Tournament", owner: "owner", ownerId: "xcv"))
+//        //EventView(event: Event(id: 1, name: "Dota LAN Event", numberOfPlayers: 100, description: "Test description Test description Test description Test description Test description Test description", gameName: "Dota", organizators: "Dotrix"))
 //    }
 //}
 

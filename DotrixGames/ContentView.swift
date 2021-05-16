@@ -13,6 +13,7 @@ import MapKit
 struct ContentView: View {
 
     @EnvironmentObject var loginManager: AuthorizaionManager
+    @EnvironmentObject var eventsNavigationController: EventNavigationController
     //@ObservedObject var modelView =  EventListViewModel()
     @ViewBuilder var body: some View {
         

@@ -14,7 +14,13 @@ struct MyEventsView: View {
     
     //@State var showView = false
     @EnvironmentObject var loginManager: AuthorizaionManager
+    
+    @Environment(\.presentationMode) var presentation
+    @EnvironmentObject var eventsNavigationController: EventNavigationController
+    
     @ObservedObject var viewModel: EventListViewModel
+    
+    
     
     var body: some View {
 
@@ -36,9 +42,9 @@ struct MyEventsView: View {
                             Text("\(event.ownerId)")
                         }
                 }
-                    .onAppear(perform: {
-                        print("RJ say: \(viewModel.myEvents)")
-                    })
+//                    .onAppear(perform: {
+//                        print("RJ say: \(viewModel.myEvents)")
+//                    })
                 .buttonStyle(PlainButtonStyle())
                 .listStyle(GroupedListStyle())
                 }
@@ -50,6 +56,9 @@ struct MyEventsView: View {
 }
 
 struct ViewForMyOwnEvents: View {
+    
+    @Environment(\.presentationMode) var presentation
+    
     @State var event: Event
     @State var viewModel: EventListViewModel
     @State var editMode: Bool =  false
@@ -104,20 +113,13 @@ struct ViewForMyOwnEvents: View {
             }
             .padding()
             HStack(spacing: 50) {
-//                Button(action: {
-//                    editMode.toggle()
-//                    // take me to edit event view
-//                }, label: {
-//                    Text("Edit")
-//                        .buttonStyle(PlainButtonStyle())
-//                        .font(.title)
-//                })
+
                 NavigationLink(
                     destination: EditEvent(event: event, viewModel: viewModel),
                     isActive: $editMode,
                     label: {
                         Button(action: {
-                            // here function to open view for adding new event
+                            // here function to open view for edit event
                             editMode.toggle()
                         },label: {
                             Text("Edit")
@@ -127,9 +129,14 @@ struct ViewForMyOwnEvents: View {
                     })
                 
                 Divider()
-                
+                //SZxUrDkJf5
                 Button(action: {
                     // remove event from event list
+                    viewModel.deleteEvent(id: event.id!)
+                    
+                    
+                    
+                    presentation.wrappedValue.dismiss()
                 }, label: {
                     Text("Remove")
                         .buttonStyle(PlainButtonStyle())

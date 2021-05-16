@@ -30,26 +30,34 @@ struct EditEvent: View {
         VStack {
             VStack(alignment: .leading) {
                 Group {
-                    Text("Name: ")
-                    TextField("new value", text: $name)
-
-                    Text("type: ")
-                    TextField("new value", text: $type)
+                    HStack {
+                        Text("Name: ")
+                        TextField("\(event.name!)", text: $name)
+                    }
+                    HStack {
+                        Text("type: ")
+                        TextField("\(event.type!)", text: $type)
+                    }
+                }
+                HStack {
+                    Text("Number of players: ")
+                    TextField("\(event.numberOfPlayers!)", text: $numberOfPlayers)
                 }
 
-                Text("Number of players: ")
-                TextField("new value", text: $numberOfPlayers)
-                
-                Text("Description: ")
-                TextField("new value", text: $description)
+                HStack {
+                    Text("Description: ")
+                    TextField("\(event.description!)", text: $description)
+                }
 
-                Text("GameName: ")
-                TextField("new value", text: $gameName)
+                HStack {
+                    Text("GameName: ")
+                    TextField("\(event.gameName!)", text: $gameName)
+                }
 
-                Text("Organizators")
-                TextField("new value", text: $organizators)
-
-
+                HStack {
+                    Text("Organizators")
+                    TextField("\(event.organizators!)", text: $organizators)
+                }
             }
             .padding()
             
@@ -58,7 +66,7 @@ struct EditEvent: View {
                     // update event values
                     
                     print("clicked done")
-                    viewModel.editEvent(event: event)
+                    viewModel.editEvent(event: event, name: name, type: type, numberOfPlayers: numberOfPlayers, description: description, gameName: gameName, organizators: organizators)
                     presentation.wrappedValue.dismiss()
                 }) {
                     Text("Done")
@@ -76,9 +84,12 @@ struct EditEvent: View {
     }
 }
 
+
+
+
 struct EditEvent_Previews: PreviewProvider {
 
     static var previews: some View {
-        EditEvent(event: Event(id: "xxx", name: "test", type: "test", mapCoordinates: CLLocationCoordinate2D(), numberOfPlayers: "1", description: "test", gameName: "test", organizators: "test", date: Date(), participants: [PFUser()], owner: "testOwner", ownerId: "123"), viewModel: EventListViewModel())
+        EditEvent(event: Event(id: "xxx", name: "test", type: "test", mapCoordinates: CLLocationCoordinate2D(), numberOfPlayers: "1", description: "test", gameName: "test", organizators: "test",startDate: Date(), endDate: Date(), creationDate: Date(), participants: [PFUser()], owner: "testOwner", ownerId: "123"), viewModel: EventListViewModel())
     }
 }

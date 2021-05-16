@@ -21,12 +21,16 @@ struct Event: Identifiable {
     var description: String?
     var gameName: String?
     var organizators: String?
-    var date: Date?
+    var startDate: Date?
+    var endDate:Date?
+    var creationDate: Date?
     var participants: [PFUser]?
     var owner: String
     var ownerId: String
     
-    
+    mutating func changeId(id: String) {
+        self.id = id
+    }
 }
 
 

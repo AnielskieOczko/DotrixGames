@@ -20,5 +20,116 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BF0EDF96-9E16-48DE-BFAD-09266C89D45B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DotrixGames/Networking/EventFetcher.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "deleteEvent(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6C7E43E6-9346-407B-97C4-D4B66A418D8C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DotrixGames/ViewModel/Event/EventListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "deleteEvent(id:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6C7E43E6-9346-407B-97C4-D4B66A418D8C - 8accddb32e6f6e8e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DotrixGames.EventListViewModel.deleteEvent(id: Swift.String) -&gt; ()"
+                  moduleName = "DotrixGames"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafal/Documents/Developer/DotrixGames/DotrixGames/ViewModel/Event/EventListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "516">
+               </Location>
+               <Location
+                  uuid = "6C7E43E6-9346-407B-97C4-D4B66A418D8C - 613d087fd088d171"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; SwiftUI.Text in DotrixGames.EventListViewModel.deleteEvent(id: Swift.String) -&gt; ()"
+                  moduleName = "DotrixGames"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafal/Documents/Developer/DotrixGames/DotrixGames/ViewModel/Event/EventListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "235">
+               </Location>
+               <Location
+                  uuid = "6C7E43E6-9346-407B-97C4-D4B66A418D8C - 613d087fd088d150"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; SwiftUI.Text in DotrixGames.EventListViewModel.deleteEvent(id: Swift.String) -&gt; ()"
+                  moduleName = "DotrixGames"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafal/Documents/Developer/DotrixGames/DotrixGames/ViewModel/Event/EventListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "1426">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16FDC2BE-0301-4C94-93AD-8FB8F0E0D352"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DotrixGames/Networking/EventFetcher.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "editEvent(event:name:type:numberOfPlayers:description:gameName:organizators:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E1CA3ACC-C147-4046-BEC3-15B2D9062136"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DotrixGames/View/Event/MultiLineTextField.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "textViewDidChange(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

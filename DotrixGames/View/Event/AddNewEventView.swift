@@ -19,12 +19,13 @@ struct AddNewEventView: View {
     @State var name: String = ""
     @State var type: String = ""
     @State var numberOfPlayers: String = ""
-    @State var description = ""
+    @State var description: String = ""
     @State var gameName = ""
     @State var organizators = ""
     //@State var date = ""
     @State  var participants: [PFUser] = []
-
+    @State var eventStartDate: Date = Date()
+    @State var eventEndDate: Date = Date()
     
     var body: some View { 
         VStack {
@@ -35,15 +36,18 @@ struct AddNewEventView: View {
                 TextField("Type", text: $type)
                 // TODO: coordinates from map
                 TextField("Number of players", text: $numberOfPlayers)
-                TextField("Description", text: $description)
+//                TextField("Description", text: $description)
+                MultiLineTF(txt: "Description...", editeEnabled: true, returnTxt: $description)
+                    .frame(maxWidth: .infinity, minHeight:   100, maxHeight: .infinity)
                 TextField("gameName", text: $gameName)
                 TextField("organizators", text: $organizators)
                 //TODO: add date picker
+                EventDatePickerView(eventStartDate: $eventStartDate, eventEndDate: $eventEndDate)
                 
             }
             
             Button(action: {
-                viewModel.addNewEvent(event: Event(name: name, type: type, numberOfPlayers: numberOfPlayers, description: description, gameName: gameName, organizators: organizators, participants: participants, owner: loginManager.currentUser?.login ?? "niezalogowany", ownerId: loginManager.currentUser?.userId ?? "niezalogowany"))
+                viewModel.addNewEvent(event: Event(name: name, type: type, numberOfPlayers: numberOfPlayers, description: description, gameName: gameName, organizators: organizators, startDate: eventStartDate, endDate: eventEndDate, creationDate: Date(), participants: participants, owner: loginManager.currentUser?.login ?? "niezalogowany", ownerId: loginManager.currentUser?.userId ?? "niezalogowany"))
                 presentation.wrappedValue.dismiss()
             }, label: {
                 Text("Submit")
@@ -58,6 +62,6 @@ struct AddNewEventView: View {
 
 struct DisplayAddNewEventView2_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewEventView(viewModel: EventListViewModel())
+        AddNewEventView(viewModel: EventListViewModel(), description: "description")
     }
 }

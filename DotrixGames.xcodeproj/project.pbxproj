@@ -29,10 +29,13 @@
 		B5439733256B25D100413283 /* MapModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5439732256B25D100413283 /* MapModelView.swift */; };
 		B552DD71257856BF00374A5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552DD70257856BF00374A5D /* LoginViewController.swift */; };
 		B562DF8525E58BB5003DD83E /* EventFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B562DF8425E58BB5003DD83E /* EventFetcher.swift */; };
+		B563F83A264C7ED400DE0E50 /* EventDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B563F839264C7ED400DE0E50 /* EventDatePickerView.swift */; };
 		B58232922610BC6100D043F2 /* MyEventsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58232912610BC6100D043F2 /* MyEventsList.swift */; };
+		B5824AC0264839F000E571E0 /* EventsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5824ABF264839F000E571E0 /* EventsNavigationController.swift */; };
 		B58ACDA0262785820072404F /* EditEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58ACD9F262785820072404F /* EditEvent.swift */; };
 		B58CE41D261B7CA50066BCAD /* MyEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CE41C261B7CA50066BCAD /* MyEventsViewModel.swift */; };
-		B5916F7125E71C760086C479 /* ViewAddNewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5916F7025E71C760086C479 /* ViewAddNewEvent.swift */; };
+		B5916F7125E71C760086C479 /* AddNewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5916F7025E71C760086C479 /* AddNewEventView.swift */; };
+		B59F75AF26515A2F0015978D /* MultiLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F75AE26515A2F0015978D /* MultiLineTextField.swift */; };
 		B5A7833A25E4731800018767 /* DisplayEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7833925E4731800018767 /* DisplayEventView.swift */; };
 		B5FAE5CA258FFC1900AFDADE /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FAE5C9258FFC1900AFDADE /* SignUp.swift */; };
 		B7225A23256EED3E0093F5C6 /* ParseClientConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */; };
@@ -69,10 +72,13 @@
 		B5439732256B25D100413283 /* MapModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModelView.swift; sourceTree = "<group>"; };
 		B552DD70257856BF00374A5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B562DF8425E58BB5003DD83E /* EventFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFetcher.swift; sourceTree = "<group>"; };
+		B563F839264C7ED400DE0E50 /* EventDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDatePickerView.swift; sourceTree = "<group>"; };
 		B58232912610BC6100D043F2 /* MyEventsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsList.swift; sourceTree = "<group>"; };
+		B5824ABF264839F000E571E0 /* EventsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsNavigationController.swift; sourceTree = "<group>"; };
 		B58ACD9F262785820072404F /* EditEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEvent.swift; sourceTree = "<group>"; };
 		B58CE41C261B7CA50066BCAD /* MyEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsViewModel.swift; sourceTree = "<group>"; };
-		B5916F7025E71C760086C479 /* ViewAddNewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAddNewEvent.swift; sourceTree = "<group>"; };
+		B5916F7025E71C760086C479 /* AddNewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewEventView.swift; sourceTree = "<group>"; };
+		B59F75AE26515A2F0015978D /* MultiLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLineTextField.swift; sourceTree = "<group>"; };
 		B5A7833925E4731800018767 /* DisplayEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayEventView.swift; sourceTree = "<group>"; };
 		B5FAE5C9258FFC1900AFDADE /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		B7225A22256EED3E0093F5C6 /* ParseClientConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseClientConfigurator.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 		B52C4A9025DDB8FC00F19C0C /* Event */ = {
 			isa = PBXGroup;
 			children = (
+				B5824ABF264839F000E571E0 /* EventsNavigationController.swift */,
 				B52DE4C425DF1CF200C83BF3 /* AddNewEventViewModel.swift */,
 				B52E83D125B4575F00CC8F44 /* EventListViewModel.swift */,
 			);
@@ -132,8 +139,10 @@
 		B52C4A9125DDBA4400F19C0C /* Event */ = {
 			isa = PBXGroup;
 			children = (
-				B5916F7025E71C760086C479 /* ViewAddNewEvent.swift */,
+				B5916F7025E71C760086C479 /* AddNewEventView.swift */,
+				B563F839264C7ED400DE0E50 /* EventDatePickerView.swift */,
 				B5A7833925E4731800018767 /* DisplayEventView.swift */,
+				B59F75AE26515A2F0015978D /* MultiLineTextField.swift */,
 				B58232912610BC6100D043F2 /* MyEventsList.swift */,
 				B58ACD9F262785820072404F /* EditEvent.swift */,
 			);
@@ -390,7 +399,9 @@
 				B5389B792573D45400FA2404 /* ViewForAddingNewEvent.swift in Sources */,
 				B52E83D025B4415900CC8F44 /* EventListModel.swift in Sources */,
 				B562DF8525E58BB5003DD83E /* EventFetcher.swift in Sources */,
-				B5916F7125E71C760086C479 /* ViewAddNewEvent.swift in Sources */,
+				B5824AC0264839F000E571E0 /* EventsNavigationController.swift in Sources */,
+				B563F83A264C7ED400DE0E50 /* EventDatePickerView.swift in Sources */,
+				B5916F7125E71C760086C479 /* AddNewEventView.swift in Sources */,
 				B5FAE5CA258FFC1900AFDADE /* SignUp.swift in Sources */,
 				B58CE41D261B7CA50066BCAD /* MyEventsViewModel.swift in Sources */,
 				B5389B812573DAAE00FA2404 /* LoginModel.swift in Sources */,
@@ -410,6 +421,7 @@
 				B58ACDA0262785820072404F /* EditEvent.swift in Sources */,
 				B5389B7F2573D79F00FA2404 /* MapView.swift in Sources */,
 				B52DE4C325DF1C5500C83BF3 /* ModelAddNewEventView.swift in Sources */,
+				B59F75AF26515A2F0015978D /* MultiLineTextField.swift in Sources */,
 				B52C4A8C25DDB47400F19C0C /* testView.swift in Sources */,
 				B52D8D652569827B004F5ED7 /* ContentView.swift in Sources */,
 				B7225A23256EED3E0093F5C6 /* ParseClientConfigurator.swift in Sources */,
@@ -482,7 +494,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -538,7 +550,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
